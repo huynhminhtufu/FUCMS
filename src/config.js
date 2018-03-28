@@ -33,7 +33,9 @@ module.exports = {
   },
 
   // Database
-  databaseUrl: process.env.DATABASE_URL || 'sqlite:database.sqlite',
+  databaseUrl:
+    process.env.DATABASE_URL ||
+    'mysql://fucms:tuoccho123@128.199.220.119/fucms',
 
   // Web analytics
   analytics: {

@@ -114,7 +114,7 @@ class Login extends React.Component {
               </label>
             </div>
             <div className={s.formGroup}>
-              <button className={s.button} type="submit">
+              <button className={s.button} type="button">
                 Log in
               </button>
             </div>
