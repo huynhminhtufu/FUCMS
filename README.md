@@ -6,6 +6,8 @@ Materials: ReactJS, NodeJS, GraphQL, SQLite.
 
 Homepage: [fucms.codeismylife.me](http://fucms.codeismylife.me)
 
--- Authors:
+--- Authors:
+
 Tran Cong Minh
+
 Huynh Minh Tu
