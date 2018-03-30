@@ -30,15 +30,15 @@ class Login extends React.Component {
                       <span className="input-group-addon">
                         <i className="zmdi zmdi-account"></i>
                       </span>
-                      <label className="control-label" for="ms-form-user">Username</label>
-                      <input type="text" id="ms-form-user" className="form-control" /> </div>
+                      <label className="control-label" htmlFor="ms-form-user">Username</label>
+                      <input type="text" id="ms-form-user" className="form-control" autoFocus/> </div>
                   </div>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
                       <span className="input-group-addon">
                         <i className="zmdi zmdi-lock"></i>
                       </span>
-                      <label className="control-label" for="ms-form-pass">Password</label>
+                      <label className="control-label" htmlFor="ms-form-pass">Password</label>
                       <input type="password" id="ms-form-pass" className="form-control" /> </div>
                   </div>
                   <div className="row ">
