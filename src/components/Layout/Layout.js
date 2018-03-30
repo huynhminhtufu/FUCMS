@@ -9,7 +9,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 // external-global styles must be imported in your JS.
 // import normalizeCss from 'normalize.css';
@@ -25,17 +24,26 @@ class Layout extends React.Component {
     children: PropTypes.node.isRequired,
   };
 
+  static defaultProps = {
+    options: {
+      isShowHeader: true,
+      isShowNavbar: true,
+      isShowFooter: true
+    }
+  };
+
   render() {
+    const { isShowHeader, isShowNavbar, isShowFooter } = this.props.options;
     return (
       <div>
-        <Header />
-        <Navigation />
+        {isShowHeader && <Header />}
+        {isShowNavbar && <Navigation />}
         {this.props.children}
-        <Feedback />
-        <Footer />
+        {isShowFooter && <Feedback />}
+        {isShowFooter && <Footer />}
       </div>
     );
   }
 }
 
-export default withStyles()(Layout);
+export default Layout;

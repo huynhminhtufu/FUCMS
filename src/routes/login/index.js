@@ -18,7 +18,13 @@ function action() {
     chunks: ['login'],
     title,
     component: (
-      <Layout>
+      <Layout
+        options={{
+          isShowHeader: false,
+          isShowNavbar: false,
+          isShowFooter: false
+        }}
+      >
         <Login title={title} />
       </Layout>
     ),

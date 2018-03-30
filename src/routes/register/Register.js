@@ -9,8 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Register.css';
+import Link from '../../components/Link';
 
 class Register extends React.Component {
   static propTypes = {
@@ -19,57 +18,73 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <h1>{this.props.title}</h1>
-          <form method="post">
-            <div className={s.formGroup}>
-              <label className={s.label} htmlFor="displayName">
-                Your name:
-                <input
-                  className={s.input}
-                  id="displayName"
-                  type="text"
-                  name="displayName"
-                  autoFocus // eslint-disable-line jsx-a11y/no-autofocus
-                  required
-                />
-              </label>
+      <div className="bg-full-page bg-primary back-fixed">
+        <div className="mw-500 absolute-center">
+          <div className="card color-dark animated zoomInDown animation-delay-5">
+            <div className="card-body">
+              <h1 className="color-primary">Sign up</h1>
+              <form>
+                <fieldset>
+                  <div className="form-group label-floating is-empty">
+                    <div className="input-group">
+                      <span className="input-group-addon">
+                        <i className="zmdi zmdi-card"></i>
+                      </span>
+                      <label className="control-label" for="ms-form-user">Full name</label>
+                      <input type="text" id="ms-form-name" className="form-control" /> </div>
+                  </div>
+                  <div className="form-group label-floating is-empty">
+                    <div className="input-group">
+                      <span className="input-group-addon">
+                        <i className="zmdi zmdi-account"></i>
+                      </span>
+                      <label className="control-label" for="ms-form-user">Username</label>
+                      <input type="text" id="ms-form-user" className="form-control" /> </div>
+                  </div>
+                  <div className="form-group label-floating is-empty">
+                    <div className="input-group">
+                      <span className="input-group-addon">
+                        <i className="zmdi zmdi-lock"></i>
+                      </span>
+                      <label className="control-label" for="ms-form-pass">Password</label>
+                      <input type="password" id="ms-form-pass" className="form-control" /> </div>
+                  </div>
+                  <div className="row ">
+                    <div className="col-md-6">
+                      <button className="btn btn-raised btn-primary btn-block">
+                        <i className="zmdi zmdi-account-add mr-1"></i> Sign up
+                      </button>
+                    </div>
+                    <div className="col-md-6">
+                      <Link to="/login" className="btn btn-primary btn-block">
+                        Login
+                        <i className="zmdi zmdi-long-arrow-right no-mr ml-1"></i>
+                      </Link>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+              <div className="text-center">
+                <h3 className="color-dark">Login with</h3>
+                <a href="/login/facebook" className="wave-effect-light btn btn-raised btn-facebook">
+                  <i className="zmdi zmdi-facebook"></i> Facebook</a>
+                <a href="/login/twitter" className="wave-effect-light btn btn-raised btn-twitter">
+                  <i className="zmdi zmdi-twitter"></i> Twitter</a>
+                <a href="/login/google" className="wave-effect-light btn btn-raised btn-google">
+                  <i className="zmdi zmdi-google"></i> Google</a>
+              </div>
             </div>
-            <div className={s.formGroup}>
-              <label className={s.label} htmlFor="email">
-                Email address:
-                <input
-                  className={s.input}
-                  id="email"
-                  type="text"
-                  name="email"
-                  required
-                />
-              </label>
-            </div>
-            <div className={s.formGroup}>
-              <label className={s.label} htmlFor="password">
-                Password:
-                <input
-                  className={s.input}
-                  id="password"
-                  type="password"
-                  name="password"
-                  required
-                />
-              </label>
-            </div>
-            <div className={s.formGroup}>
-              <button className={s.button} type="button">
-                Sign Up
-              </button>
-            </div>
-          </form>
+          </div>
+          <div className="text-center animated fadeInUp animation-delay-7">
+            <Link to="/" className="btn btn-white">
+              <i className="zmdi zmdi-home"></i> Go Home</Link>
+            <Link to="/" className="btn btn-white">
+              <i className="zmdi zmdi-key"></i> Recovery Pass</Link>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default withStyles(s)(Register);
+export default Register;

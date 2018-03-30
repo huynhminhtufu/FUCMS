@@ -18,7 +18,13 @@ function action() {
     chunks: ['register'],
     title,
     component: (
-      <Layout>
+      <Layout
+        options={{
+          isShowHeader: false,
+          isShowNavbar: false,
+          isShowFooter: false
+        }}
+      >
         <Register title={title} />
       </Layout>
     ),
