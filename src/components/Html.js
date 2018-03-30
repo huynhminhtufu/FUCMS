@@ -33,14 +33,22 @@ class Html extends React.Component {
     styles: [],
     scripts: [],
     mainScripts: [
-      "/default/assets/js/plugins.min.js",
-      "/default/assets/js/app.min.js",
-      "/default/assets/js/configurator.min.js"
+      '/default/assets/js/plugins.min.js',
+      '/default/assets/js/app.min.js',
+      '/default/assets/js/configurator.min.js',
     ],
   };
 
   render() {
-    const { title, description, styles, scripts, app, children, mainScripts } = this.props;
+    const {
+      title,
+      description,
+      styles,
+      scripts,
+      app,
+      children,
+      mainScripts,
+    } = this.props;
     return (
       <html className="no-js" lang="en">
         <head>
@@ -57,11 +65,23 @@ class Html extends React.Component {
           ))}
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="apple-touch-icon" href="/icon.png" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
           <link rel="stylesheet" href="/default/assets/css/preload.min.css" />
           <link rel="stylesheet" href="/default/assets/css/plugins.min.css" />
-          <link rel="stylesheet" href="/default/assets/css/style.light-blue-500.min.css" />
-          <link rel="stylesheet" href="/default/assets/css/width-boxed.min.css" id="ms-boxed" disabled="true" />
+          <link
+            rel="stylesheet"
+            href="/default/assets/css/style.light-blue-500.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="/default/assets/css/width-boxed.min.css"
+            id="ms-boxed"
+            disabled="true"
+          />
+          <link rel="stylesheet" href="/default/assets/css/custom.css" />
           {styles.map(style => (
             <style
               key={style.id}
@@ -71,15 +91,19 @@ class Html extends React.Component {
           ))}
         </head>
         <body>
-          <div id="ms-preload" class="ms-preload">
+          <div id="ms-preload" className="ms-preload">
             <div id="status">
-              <div class="spinner">
-                <div class="dot1"></div>
-                <div class="dot2"></div>
+              <div className="spinner">
+                <div className="dot1" />
+                <div className="dot2" />
               </div>
             </div>
           </div>
-          <div id="app" dangerouslySetInnerHTML={{ __html: children }} className="ms-site-container" />
+          <div
+            id="app"
+            dangerouslySetInnerHTML={{ __html: children }}
+            className="ms-site-container"
+          />
           <script
             dangerouslySetInnerHTML={{ __html: `window.App=${serialize(app)}` }}
           />
@@ -91,7 +115,7 @@ class Html extends React.Component {
                 __html:
                   'window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;' +
                   `ga('create','${
-                  config.analytics.googleTrackingId
+                    config.analytics.googleTrackingId
                   }','auto');ga('send','pageview')`,
               }}
             />
