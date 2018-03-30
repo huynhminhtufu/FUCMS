@@ -32,10 +32,15 @@ class Html extends React.Component {
   static defaultProps = {
     styles: [],
     scripts: [],
+    mainScripts: [
+      "/default/assets/js/plugins.min.js",
+      "/default/assets/js/app.min.js",
+      "/default/assets/js/configurator.min.js"
+    ],
   };
 
   render() {
-    const { title, description, styles, scripts, app, children } = this.props;
+    const { title, description, styles, scripts, app, children, mainScripts } = this.props;
     return (
       <html className="no-js" lang="en">
         <head>
@@ -47,8 +52,16 @@ class Html extends React.Component {
           {scripts.map(script => (
             <link key={script} rel="preload" href={script} as="script" />
           ))}
+          {mainScripts.map(script => (
+            <link key={script} rel="preload" href={script} as="script" />
+          ))}
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="apple-touch-icon" href="/icon.png" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+          <link rel="stylesheet" href="/default/assets/css/preload.min.css" />
+          <link rel="stylesheet" href="/default/assets/css/plugins.min.css" />
+          <link rel="stylesheet" href="/default/assets/css/style.light-blue-500.min.css" />
+          <link rel="stylesheet" href="/default/assets/css/width-boxed.min.css" id="ms-boxed" disabled="true" />
           {styles.map(style => (
             <style
               key={style.id}
@@ -58,18 +71,27 @@ class Html extends React.Component {
           ))}
         </head>
         <body>
-          <div id="app" dangerouslySetInnerHTML={{ __html: children }} />
+          <div id="ms-preload" class="ms-preload">
+            <div id="status">
+              <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+              </div>
+            </div>
+          </div>
+          <div id="app" dangerouslySetInnerHTML={{ __html: children }} className="ms-site-container" />
           <script
             dangerouslySetInnerHTML={{ __html: `window.App=${serialize(app)}` }}
           />
           {scripts.map(script => <script key={script} src={script} />)}
+          {mainScripts.map(script => <script key={script} src={script} />)}
           {config.analytics.googleTrackingId && (
             <script
               dangerouslySetInnerHTML={{
                 __html:
                   'window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;' +
                   `ga('create','${
-                    config.analytics.googleTrackingId
+                  config.analytics.googleTrackingId
                   }','auto');ga('send','pageview')`,
               }}
             />

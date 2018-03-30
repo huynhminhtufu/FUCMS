@@ -12,11 +12,13 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 // external-global styles must be imported in your JS.
-import normalizeCss from 'normalize.css';
-import s from './Layout.css';
+// import normalizeCss from 'normalize.css';
+// import s from './Layout.css';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
+import Link from '../Link';
+import Navigation from '../Navigation';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -27,6 +29,7 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
+        <Navigation />
         {this.props.children}
         <Feedback />
         <Footer />
@@ -35,4 +38,4 @@ class Layout extends React.Component {
   }
 }
 
-export default withStyles(normalizeCss, s)(Layout);
+export default withStyles()(Layout);

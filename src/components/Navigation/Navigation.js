@@ -9,31 +9,53 @@
 
 import React from 'react';
 import cx from 'classnames';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Navigation.css';
 import Link from '../Link';
 
 class Navigation extends React.Component {
   render() {
     return (
-      <div className={s.root} role="navigation">
-        <Link className={s.link} to="/about">
-          About
-        </Link>
-        <Link className={s.link} to="/contact">
-          Contact
-        </Link>
-        <span className={s.spacer}> | </span>
-        <Link className={s.link} to="/login">
-          Log in
-        </Link>
-        <span className={s.spacer}>or</span>
-        <Link className={cx(s.link, s.highlight)} to="/register">
-          Sign up
-        </Link>
-      </div>
-    );
+      <nav className="navbar navbar-expand-md navbar-static ms-navbar ms-navbar-primary">
+        <div className="container container-full">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="index-2.html">
+              {/* <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> --> */}
+              <span className="ms-logo ms-logo-sm">FU</span>
+              <span className="ms-title">FU
+              <strong>Team</strong>
+              </span>
+            </a>
+          </div>
+          <div className="collapse navbar-collapse" id="ms-navbar">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
+                  Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Log in
+              </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/register">
+                  Sign up
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <a href="javascript:void(0)" className="ms-toggle-left btn-navbar-menu">
+            <i className="zmdi zmdi-menu"></i>
+          </a>
+        </div>
+      </nav>
+        );
   }
 }
 
-export default withStyles(s)(Navigation);
+export default Navigation;
