@@ -13,14 +13,14 @@ class Feedback extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row col mb-2">
-          <a className="btn btn-primary btn-raised animate-icon mr-1 " href="/">
+        {/* <div className="row col mb-2">
+          <a className="btn btn-warning btn-raised animate-icon mr-1 " href="/">
             Ask a question
           </a>
-          <a className="btn btn-primary btn-raised animate-icon" href="/">
+          <a className="btn btn-danger btn-raised animate-icon" href="/">
             Report an issue
           </a>
-        </div>
+        </div> */}
       </div>
     );
   }

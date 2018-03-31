@@ -9,8 +9,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ErrorPage.css';
 
 class ErrorPage extends React.Component {
   static propTypes = {
@@ -28,21 +26,53 @@ class ErrorPage extends React.Component {
   render() {
     if (__DEV__ && this.props.error) {
       return (
-        <div>
-          <h1>{this.props.error.name}</h1>
-          <pre>{this.props.error.stack}</pre>
+        <div className="bg-full-page bg-primary back-fixed">
+          <div className="mw-500 absolute-center">
+            <div className="card animated zoomInUp animation-delay-7 color-primary withripple">
+              <div className="card-body">
+                <div className="text-center color-dark">
+                  <h1 className="color-primary text-big">
+                    {this.props.error.name}
+                  </h1>
+                  <h2>{this.props.error.stack}</h2>
+                  <p className="lead lead-sm">
+                    Sorry, a critical error occurred on this page.
+                    <br />Please reload this page or return to homepage.
+                  </p>
+                  <a href="/" className="btn btn-primary btn-raised">
+                    <i className="zmdi zmdi-home" /> Go Home
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       );
     }
 
     return (
-      <div>
-        <h1>Error</h1>
-        <p>Sorry, a critical error occurred on this page.</p>
+      <div className="bg-full-page bg-primary back-fixed">
+        <div className="mw-500 absolute-center">
+          <div className="card animated zoomInUp animation-delay-7 color-primary withripple">
+            <div className="card-body">
+              <div className="text-center color-dark">
+                <h1 className="color-primary text-big">Oops... Error!</h1>
+                <h2>Something Went Wrong</h2>
+                <p className="lead lead-sm">
+                  Sorry, a critical error occurred on this page.
+                  <br />Please reload this page or return to homepage.
+                </p>
+                <a href="/" className="btn btn-primary btn-raised">
+                  <i className="zmdi zmdi-home" /> Go Home
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
 export { ErrorPage as ErrorPageWithoutStyle };
-export default withStyles(s)(ErrorPage);
+export default ErrorPage;
