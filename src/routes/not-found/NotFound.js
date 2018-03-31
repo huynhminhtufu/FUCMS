@@ -8,25 +8,31 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './NotFound.css';
 
 class NotFound extends React.Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
-
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <h1>{this.props.title}</h1>
-          <p>Sorry, the page you were trying to view does not exist.</p>
+      <div className="bg-full-page bg-primary back-fixed">
+        <div className="mw-500 absolute-center">
+          <div className="card animated zoomInUp animation-delay-7 color-primary withripple">
+            <div className="card-body">
+              <div className="text-center color-dark">
+                <h1 className="color-primary text-big">Error 404</h1>
+                <h2>Page Not Found</h2>
+                <p className="lead lead-sm">
+                  We have not found what you are looking for.
+                  <br />We have put our robots to search.
+                </p>
+                <a href="/" className="btn btn-primary btn-raised">
+                  <i className="zmdi zmdi-home" /> Go Home
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default withStyles(s)(NotFound);
+export default NotFound;

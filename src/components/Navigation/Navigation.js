@@ -8,7 +8,6 @@
  */
 
 import React from 'react';
-import cx from 'classnames';
 import Link from '../Link';
 
 class Navigation extends React.Component {
@@ -20,13 +19,19 @@ class Navigation extends React.Component {
             <a className="navbar-brand" href="index-2.html">
               {/* <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> --> */}
               <span className="ms-logo ms-logo-sm">FU</span>
-              <span className="ms-title">FU
-              <strong>Team</strong>
+              <span className="ms-title">
+                CMS
+                <strong>Beta</strong>
               </span>
             </a>
           </div>
           <div className="collapse navbar-collapse" id="ms-navbar">
             <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" to="/">
+                  Homepage
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">
                   About
@@ -40,7 +45,7 @@ class Navigation extends React.Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Log in
-              </Link>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
@@ -49,12 +54,15 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-          <a href="javascript:void(0)" className="ms-toggle-left btn-navbar-menu">
-            <i className="zmdi zmdi-menu"></i>
+          <a
+            href="javascript:void(0)"
+            className="ms-toggle-left btn-navbar-menu"
+          >
+            <i className="zmdi zmdi-menu" />
           </a>
         </div>
       </nav>
-        );
+    );
   }
 }
 

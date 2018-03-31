@@ -8,25 +8,16 @@
  */
 
 import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Feedback.css';
 
 class Feedback extends React.Component {
   render() {
     return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <a
-            className={s.link}
-            href="https://gitter.im/kriasoft/react-starter-kit"
-          >
+      <div className="container">
+        <div className="row col mb-2">
+          <a className="btn btn-primary btn-raised animate-icon mr-1 " href="/">
             Ask a question
           </a>
-          <span className={s.spacer}>|</span>
-          <a
-            className={s.link}
-            href="https://github.com/kriasoft/react-starter-kit/issues/new"
-          >
+          <a className="btn btn-primary btn-raised animate-icon" href="/">
             Report an issue
           </a>
         </div>
@@ -35,4 +26,4 @@ class Feedback extends React.Component {
   }
 }
 
-export default withStyles(s)(Feedback);
+export default Feedback;

@@ -31,13 +31,13 @@ class Home extends React.Component {
                 FU
               </span>
               <h1 className="no-m ms-site-title color-white center-block ms-site-title-lg mt-2 animated zoomInDown animation-delay-5">
-                Blog
+                Blog CMS
               </h1>
               <p className="lead lead-lg color-white text-center center-block mt-2 mw-800 fw-300 animated fadeInUp animation-delay-7">
                 Follow our blog and discover the latest content and trends in
                 the market. In addition you will discover the best
-                <span className="colorStar">tricks</span> and
-                <span className="colorStar">discounts</span>.
+                <span className="colorStar"> tricks</span> and
+                <span className="colorStar"> discounts</span>.
               </p>
             </div>
           </div>
@@ -53,7 +53,6 @@ class Home extends React.Component {
                       className="text-white"
                       role="button"
                       data-toggle="collapse"
-                      href={`#collapsePost${index}`}
                       aria-expanded="true"
                       aria-controls={`#collapsePost${index}`}
                     >
