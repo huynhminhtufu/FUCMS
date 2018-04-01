@@ -14,7 +14,7 @@ import NewsItemType from '../types/NewsItemType';
 // React.js News Feed (RSS)
 const url =
   'https://api.rss2json.com/v1/api.json' +
-  '?rss_url=https%3A%2F%2Ftinhte.vn%2Frss';
+  '?rss_url=https%3A%2F%2Fwww.theverge.com%2Ftech%2Frss%2Findex.xml';
 
 let items = [];
 let lastFetchTask;
