@@ -13,7 +13,7 @@ module.exports = {
   parser: 'babel-eslint',
 
   extends: [
-    'airbnb',
+    // 'airbnb',
     'plugin:flowtype/recommended',
     'plugin:css-modules/recommended',
     'prettier',
