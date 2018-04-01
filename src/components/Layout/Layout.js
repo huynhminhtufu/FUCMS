@@ -18,6 +18,7 @@ import Feedback from '../Feedback';
 import Footer from '../Footer';
 import Navigation from '../Navigation';
 import LoginModal from './LoginModal';
+import SlideBar from './SlideBar';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -37,12 +38,15 @@ class Layout extends React.Component {
     const { isShowHeader, isShowNavbar, isShowFooter } = this.props.options;
     return (
       <div>
-        <LoginModal />
-        {isShowHeader && <Header />}
-        {isShowNavbar && <Navigation />}
-        {this.props.children}
-        {isShowFooter && <Feedback />}
-        {isShowFooter && <Footer />}
+        {isShowHeader && <LoginModal />}
+        {isShowHeader && <SlideBar />}
+        <div className="ms-site-container">
+          {isShowHeader && <Header />}
+          {isShowNavbar && <Navigation />}
+          {this.props.children}
+          {isShowFooter && <Feedback />}
+          {isShowFooter && <Footer />}
+        </div>
       </div>
     );
   }

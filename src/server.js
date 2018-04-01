@@ -160,6 +160,7 @@ app.get('*', async (req, res, next) => {
         value: Date.now(),
       }),
     );
+    console.log(req.path);
 
     // Global (context) variables that can be easily accessed from any React component
     // https://facebook.github.io/react/docs/context.html
