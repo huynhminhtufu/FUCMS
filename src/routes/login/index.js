@@ -22,7 +22,7 @@ function action() {
         options={{
           isShowHeader: false,
           isShowNavbar: false,
-          isShowFooter: false
+          isShowFooter: false,
         }}
       >
         <Login title={title} />

@@ -48,14 +48,7 @@ class Home extends React.Component {
               <article key={item.link} className="card card-primary">
                 <div className="card-header">
                   <h3 className="card-title">
-                    <a
-                      href={item.link}
-                      className="text-white"
-                      role="button"
-                      data-toggle="collapse"
-                      aria-expanded="true"
-                      aria-controls={`#collapsePost${index}`}
-                    >
+                    <a href={item.link} target="_blank" className="text-white">
                       {item.title}
                     </a>
                   </h3>

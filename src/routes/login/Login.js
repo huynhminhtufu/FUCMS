@@ -8,14 +8,9 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from '../../components/Link';
 
 class Login extends React.Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
-
   render() {
     return (
       <div className="bg-full-page bg-primary back-fixed">
