@@ -2,9 +2,10 @@ import { User, UserLogin, UserClaim, UserProfile } from '../data/models';
 import { hashPassword } from '../helpers/password';
 
 export const signUp = async data => {
-  const { hashedPassword, salt, error } = hashPassword({
+  const hashedResult = await hashPassword({
     password: data.password,
   });
+  const { hashedPassword, salt, error } = hashedResult;
 
   if (error) {
     return error;
@@ -14,10 +15,7 @@ export const signUp = async data => {
     {
       email: data.email,
       emailConfirmed: false,
-      logins: [
-        { name: 'username', key: data.username },
-        { name: 'email', key: data.email },
-      ],
+      logins: [{ name: 'username', key: data.username }],
       claims: [
         { type: 'password', value: hashedPassword },
         { type: 'salt', value: salt },

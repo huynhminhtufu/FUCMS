@@ -16,12 +16,13 @@ import PropTypes from 'prop-types';
 import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
-import Link from '../Link';
 import Navigation from '../Navigation';
+import LoginModal from './LoginModal';
 
 class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
+    options: PropTypes.object
   };
 
   static defaultProps = {
@@ -36,6 +37,7 @@ class Layout extends React.Component {
     const { isShowHeader, isShowNavbar, isShowFooter } = this.props.options;
     return (
       <div>
+        <LoginModal />
         {isShowHeader && <Header />}
         {isShowNavbar && <Navigation />}
         {this.props.children}

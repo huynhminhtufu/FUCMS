@@ -11,7 +11,7 @@ import React from 'react';
 // import withStyles from 'isomorphic-style-loader/lib/withStyles';
 // import s from './Header.css';
 import Link from '../Link';
-import Navigation from '../Navigation';
+// import Navigation from '../Navigation';
 
 class Header extends React.Component {
   render() {
@@ -33,45 +33,36 @@ class Header extends React.Component {
             <div className="share-menu">
               <ul className="share-menu-list">
                 <li className="animated fadeInRight animation-delay-3">
-                  <a
-                    href="javascript:void(0)"
-                    className="btn-circle btn-google"
-                  >
+                  <button className="btn-circle btn-google">
                     <i className="zmdi zmdi-google" />
-                  </a>
+                  </button>
                 </li>
                 <li className="animated fadeInRight animation-delay-2">
-                  <a
-                    href="javascript:void(0)"
+                  <button
                     className="btn-circle btn-facebook"
                   >
                     <i className="zmdi zmdi-facebook" />
-                  </a>
+                  </button>
                 </li>
                 <li className="animated fadeInRight animation-delay-1">
-                  <a
-                    href="javascript:void(0)"
+                  <button
                     className="btn-circle btn-twitter"
                   >
                     <i className="zmdi zmdi-twitter" />
-                  </a>
+                  </button>
                 </li>
               </ul>
-              <a
-                href="javascript:void(0)"
-                className="btn-circle btn-circle-primary animated zoomInDown animation-delay-7"
-              >
+              <button className="btn-circle btn-circle-primary animated zoomInDown animation-delay-7">
                 <i className="zmdi zmdi-share" />
-              </a>
+              </button>
             </div>
-            <a
-              href="javascript:void(0)"
+            <button
               className="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8"
               data-toggle="modal"
               data-target="#ms-account-modal"
             >
               <i className="zmdi zmdi-account" />
-            </a>
+            </button>
             <form className="search-form animated zoomInDown animation-delay-9">
               <input
                 id="search-box"
@@ -84,12 +75,9 @@ class Header extends React.Component {
                 <i className="zmdi zmdi-search" />
               </label>
             </form>
-            <a
-              href="javascript:void(0)"
-              className="btn-ms-menu btn-circle btn-circle-primary ms-toggle-left animated zoomInDown animation-delay-10"
-            >
+            <button className="btn-ms-menu btn-circle btn-circle-primary ms-toggle-left animated zoomInDown animation-delay-10">
               <i className="zmdi zmdi-menu" />
-            </a>
+            </button>
           </div>
         </div>
       </header>

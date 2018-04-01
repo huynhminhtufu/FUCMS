@@ -22,13 +22,15 @@ import PrettyError from 'pretty-error';
 import App from './components/App';
 import Html from './components/Html';
 import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
-import createFetch from './createFetch';
+import { createFetch, createFetchApi } from './createFetch';
 import passport from './passport';
 import router from './router';
 import models from './data/models';
 import schema from './data/schema';
 // import assets from './asset-manifest.json'; // eslint-disable-line import/no-unresolved
 import chunks from './chunk-manifest.json'; // eslint-disable-line import/no-unresolved
+import configureStore from './store/configureStore'; // redux
+import { setRuntimeVariable } from './actions/runtime';
 import config from './config';
 
 process.on('unhandledRejection', (reason, p) => {
@@ -139,14 +141,38 @@ app.get('*', async (req, res, next) => {
       graphql,
     });
 
+    const fetchApi = createFetchApi(fetch);
+
+    // redux config
+    const initialState = {
+      user: req.user || null,
+    };
+
+    const store = configureStore(initialState, {
+      fetch,
+      fetchApi,
+      // I should not use `history` on server.. but how I do redirection? follow universal-router
+    });
+
+    store.dispatch(
+      setRuntimeVariable({
+        name: 'initialNow',
+        value: Date.now(),
+      }),
+    );
+
     // Global (context) variables that can be easily accessed from any React component
     // https://facebook.github.io/react/docs/context.html
     const context = {
       insertCss,
       fetch,
+      fetchApi,
       // The twins below are wild, be careful!
       pathname: req.path,
       query: req.query,
+      // You can access redux through react-redux connect
+      store,
+      storeSubscription: null,
     };
 
     const route = await router.resolve(context);
@@ -177,6 +203,7 @@ app.get('*', async (req, res, next) => {
     data.scripts = Array.from(scripts);
     data.app = {
       apiUrl: config.api.clientUrl,
+      state: context.store.getState(),
     };
 
     const html = ReactDOM.renderToStaticMarkup(<Html {...data} />);

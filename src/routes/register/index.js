@@ -13,7 +13,7 @@ import Register from './Register';
 
 const title = 'Sign up';
 
-function action() {
+function action({ fetch }) {
   return {
     chunks: ['register'],
     title,
@@ -25,7 +25,7 @@ function action() {
           isShowFooter: false,
         }}
       >
-        <Register title={title} />
+        <Register title={title} fetch={fetch} />
       </Layout>
     ),
   };

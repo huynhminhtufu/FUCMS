@@ -76,6 +76,8 @@ module.exports = {
         aspects: ['noHref', 'invalidHref', 'preferButton'],
       },
     ],
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/no-autofocus': 'off',
 
     // Allow .js files to use JSX syntax
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
@@ -87,7 +89,9 @@ module.exports = {
 
     // ESLint plugin for prettier formatting
     // https://github.com/prettier/eslint-plugin-prettier
-    'prettier/prettier': 'error',
+    // 'prettier/prettier': 'error',
+    'no-unused-expressions': 'off',
+    'react/forbid-prop-types': 'warn'
   },
 
   settings: {

@@ -16,6 +16,11 @@ class Register extends React.Component {
     title: PropTypes.string.isRequired,
   };
 
+  static contextTypes = {
+    fetch: PropTypes.func.isRequired,
+    fetchApi: PropTypes.func.isRequired,
+  };
+
   constructor(props) {
     super(props);
 
@@ -49,14 +54,33 @@ class Register extends React.Component {
     });
   }
 
-  handleSignUp() {
+  async handleSignUp() {
     const { fields } = this.state;
+    const { fetchApi } = this.context;
     const data = {};
     Object.keys(fields).forEach(fieldName => {
       data[fieldName] = fields[fieldName].value;
     });
 
-    console.log(data);
+    const query = `mutation
+    {
+      addUser(
+        name: "${data.name}",
+        email: "${data.email}",
+        username: "${data.username}",
+        password: "${data.password}"
+      ) {
+        id,
+        email
+      }
+    }`;
+
+    const result = await fetchApi({ query });
+    if (result.data.addUser.id) {
+      alert('Success');
+    } else {
+      alert('Fail');
+    }
   }
 
   render() {
@@ -68,7 +92,7 @@ class Register extends React.Component {
           <div className="card color-dark animated zoomInDown animation-delay-5">
             <div className="card-body">
               <h1 className="color-primary">{title}</h1>
-              <form method="POST">
+              <form method="POST" onSubmit={e => this.onFieldChange(e)}>
                 <fieldset>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
