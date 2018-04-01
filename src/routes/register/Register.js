@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from '../../components/Link';
 
 class Register extends React.Component {
@@ -83,6 +84,8 @@ class Register extends React.Component {
   }
 
   render() {
+    const { title } = this.props;
+
     return (
       <div className="bg-full-page bg-primary back-fixed">
         <div className="mw-500 absolute-center">
