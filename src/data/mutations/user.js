@@ -1,12 +1,39 @@
+import { GraphQLNonNull, GraphQLID, GraphQLString, GraphQLInt } from 'graphql';
 import UserType from '../types/UserType';
+import { signUp } from '../../controllers/userController';
 
-const me = {
+export const me = {
   type: UserType,
   args: {
-    id: {type: new Graphql.GraphQLNonNull(Graphql.GraphQLID)},
-    name: {type: new Graphql.GraphQLNonNull(Graphql.GraphQLString)},
-    age: {type: Graphql.GraphQLInt}
+    id: {
+      type: new GraphQLNonNull(GraphQLID),
     },
+    name: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+    age: {
+      type: GraphQLInt,
+    },
+  },
 };
 
-export default me;
+export const addUser = {
+  type: UserType,
+  args: {
+    name: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+    email: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+    username: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+    password: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+  },
+  resolve: (source, args) => signUp(args),
+};
+
+export default { me, addUser };
