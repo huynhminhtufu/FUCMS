@@ -26,10 +26,10 @@ type Options = {
  * of boilerplate code in the application.
  * https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
  */
-function createFetch(
+export const createFetch = (
   fetch: Fetch,
   { baseUrl, cookie, schema, graphql }: Options,
-) {
+) => {
   // NOTE: Tweak the default options to suite your application needs
   const defaults = {
     method: 'POST', // handy with GraphQL backends
@@ -71,6 +71,16 @@ function createFetch(
         })
       : fetch(url, options);
   };
-}
+};
+
+export const createFetchApi = fetch => async ({ query, header, method }) => {
+  const resp = await fetch('/graphql', {
+    body: JSON.stringify({ query }),
+    header,
+    method: method || 'POST',
+  });
+  const respJson = await resp.json();
+  return respJson;
+};
 
 export default createFetch;
