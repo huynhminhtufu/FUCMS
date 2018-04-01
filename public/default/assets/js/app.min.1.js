@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 function openConf(t) {
   $("#ms-configurator").animate({
       right: "0px"
@@ -17,41 +15,23 @@ function closeConf() {
   }, 400)
 }
 function slidebar() {
-  var t = $(".ms-slidebar")
+  let t = $(".ms-slidebar")
     , o = $(".ms-site-container")
     , n = !1
     , e = !1;
-  $(".ms-toggle-left").click(function() {
+  $(".ms-toggle-left").click(() => {
       e ? (t.removeClass("open"),
       e = !1) : (t.addClass("open"),
       e = !0),
       n = !0
   }),
-  o.click(function() {
+  o.click(() => {
       !n && e && (t.removeClass("open"),
       e = !1),
       n = !1
   })
 }
-
-function afterBodyShowed() {
-  var n = $('.ms-navbar'),
-    e = ($('.navbar-nav'), $('body')),
-    i = $('.ms-site-container').hasClass('ms-nav-fixed');
-  $(window).scroll(() => {
-    i ||
-      ($(window).scrollTop() > 120 &&
-        (n.addClass('shrink'),
-        e.addClass('bd-scroll'),
-        n.addClass('fixed-top')),
-      $(window).scrollTop() < 121 &&
-        (n.removeClass('shrink'),
-        e.removeClass('bd-scroll'),
-        n.removeClass('fixed-top')));
-  });
-}
-
-$(document).ready(function() {
+$(document).ready(() => {
 
   // const afterBodyShowed = () => {
   //     var n = $(".ms-navbar")
@@ -70,7 +50,7 @@ $(document).ready(function() {
 
   // setTimeout(() => { afterBodyShowed(); }, 1000);
 
-  document.addEventListener("touchstart", function() {}, !0),
+  document.addEventListener("touchstart", () => {}, !0),
   $.material.init();
   new SmoothScroll("[data-scroll]");
   $('[data-toggle="tooltip"]').tooltip(),
@@ -87,11 +67,11 @@ $(document).ready(function() {
       time: 2e3
   }),
   slidebar();
-  var t, o = $(".btn-back-top");
+  let t, o = $(".btn-back-top");
   $(window).scroll(function() {
       $(this).scrollTop() > 400 ? o.addClass("back-show") : o.removeClass("back-show")
   }),
-  (t = jQuery)(function() {
+  (t = jQuery)(() => {
       t(document).off("click.bs.tab.data-api", '[data-hover="tab"]'),
       t(document).on("mouseenter.bs.tab.data-api", '[data-hover="tab"]', function() {
           t(this).tab("show")
@@ -103,18 +83,18 @@ $(document).ready(function() {
       $(this).next("ul").addClass("open_t"),
       !1)
   }),
-  $(document).on("click", ":not(.has_children, .has_children *)", function() {
+  $(document).on("click", ":not(.has_children, .has_children *)", () => {
       if ($(".open_t").length > 0)
           return $(".open_t").removeClass("open_t"),
           $(".open_t").parent().removeClass("open"),
           !1
   });
 
-  var n = $(".ms-navbar")
+  let n = $(".ms-navbar")
     , e = ($(".navbar-nav"),
   $("body"))
     , i = $(".ms-site-container").hasClass("ms-nav-fixed");
-  $(window).scroll(function() {
+  $(window).scroll(() => {
       i || ($(window).scrollTop() > 120 && (n.addClass("shrink"),
       e.addClass("bd-scroll"),
       n.addClass("fixed-top")),
@@ -127,38 +107,38 @@ $(document).ready(function() {
       autoclose: !0,
       todayHighlight: !0
   });
-  var a = $(".masonry-container");
-  a.imagesLoaded(function() {
+  const a = $(".masonry-container");
+  a.imagesLoaded(() => {
       a.masonry({
           columnWidth: ".masonry-item",
           itemSelector: ".masonry-item"
       })
   });
-  var s = !1;
-  $(".ms-conf-btn").click(function() {
+  let s = !1;
+  $(".ms-conf-btn").click(() => {
       s ? (s = !1,
       closeConf()) : (s = !0,
       openConf())
   }),
-  $(".ms-site-container").click(function() {
+  $(".ms-site-container").click(() => {
       s && (s = !1,
       closeConf())
   })
 }),
 function(t) {
-  t(".input-number .btn-circle:first-of-type").on("click", function() {
+  t(".input-number .btn-circle:first-of-type").on("click", () => {
       t(".input-number input").val(parseInt(t(".input-number input").val(), 10) - 1)
   }),
-  t(".input-number .btn-circle:last-of-type").on("click", function() {
+  t(".input-number .btn-circle:last-of-type").on("click", () => {
       t(".input-number input").val(parseInt(t(".input-number input").val(), 10) + 1)
   })
 }(jQuery),
 function(t, o, n) {
-  var e = t();
+  let e = t();
   t.fn.dropdownHover = function(n) {
       return "ontouchstart"in document ? this : (e = e.add(this.parent()),
       this.each(function() {
-          var i, a, s = t(this), r = s.parent(), l = {
+          let i, a, s = t(this), r = s.parent(), l = {
               delay: t(this).data("delay"),
               hoverDelay: t(this).data("hover-delay"),
               instantlyCloseOthers: t(this).data("close-others")
@@ -170,7 +150,7 @@ function(t, o, n) {
           function u(t) {
               o.clearTimeout(i),
               o.clearTimeout(a),
-              a = o.setTimeout(function() {
+              a = o.setTimeout(() => {
                   e.find(":focus").blur(),
                   !0 === p.instantlyCloseOthers && e.removeClass("show"),
                   o.clearTimeout(a),
@@ -179,32 +159,32 @@ function(t, o, n) {
                   s.trigger(c)
               }, p.hoverDelay)
           }
-          r.hover(function(n) {
+          r.hover((n) => {
               if (!r.hasClass("show") && !s.is(n.target))
                   return !0;
               t(o).width() > 767 && u(n)
-          }, function() {
+          }, () => {
               t(o).width() > 767 && (o.clearTimeout(a),
-              i = o.setTimeout(function() {
+              i = o.setTimeout(() => {
                   s.attr("aria-expanded", "false"),
                   r.removeClass("show"),
                   s.trigger("hide.bs.dropdown")
               }, p.delay))
           }),
-          s.hover(function(n) {
+          s.hover((n) => {
               if (!r.hasClass("show") && !r.is(n.target) && t(o).width() > 767)
                   return !0;
               t(o).width() > 767 && u(n)
           }),
           r.find(".dropdown-submenu").each(function() {
-              var n, e = t(this);
-              e.hover(function() {
+              let n, e = t(this);
+              e.hover(() => {
                   o.clearTimeout(n),
                   e.children(".dropdown-menu").show(),
                   e.siblings().children(".dropdown-menu").hide()
-              }, function() {
-                  var t = e.children(".dropdown-menu");
-                  n = o.setTimeout(function() {
+              }, () => {
+                  const t = e.children(".dropdown-menu");
+                  n = o.setTimeout(() => {
                       t.hide()
                   }, p.delay)
               })
@@ -212,20 +192,20 @@ function(t, o, n) {
       }))
   }
   ,
-  t(document).ready(function() {
+  t(document).ready(() => {
       t('[data-hover="dropdown"]').dropdownHover()
   })
 }(jQuery, window),
 function(t) {
   function o(o) {
-      var n = t(o);
+      const n = t(o);
       n.prop("disabled") || n.closest(".form-group").addClass("is-focused")
   }
   function n(n) {
-      var i = !1;
+      let i = !1;
       (n.is(t.material.options.checkboxElements) || n.is(t.material.options.radioElements)) && (i = !0),
       n.closest("label").hover(function() {
-          var n, e, a = t(this).find("input"), s = a.prop("disabled");
+          let n, e, a = t(this).find("input"), s = a.prop("disabled");
           i && (n = t(this),
           e = s,
           (n.hasClass("checkbox-inline") || n.hasClass("radio-inline") ? n : n.closest(".checkbox").length ? n.closest(".checkbox") : n.closest(".radio")).toggleClass("disabled", e)),
@@ -257,103 +237,103 @@ function(t) {
           togglebuttonElements: ".togglebutton > label > input[type=checkbox]",
           radioElements: ".radio > label > input[type=radio], label.radio-inline > input[type=radio]"
       },
-      checkbox: function(o) {
+      checkbox(o) {
           n(t(o || this.options.checkboxElements).filter(":notmdproc").data("mdproc", !0).after("<span class='checkbox-material'><span class='check'></span></span>"))
       },
-      togglebutton: function(o) {
+      togglebutton(o) {
           n(t(o || this.options.togglebuttonElements).filter(":notmdproc").data("mdproc", !0).after("<span class='toggle'></span>"))
       },
-      radio: function(o) {
+      radio(o) {
           n(t(o || this.options.radioElements).filter(":notmdproc").data("mdproc", !0).after("<span class='circle'></span><span class='check'></span>"))
       },
-      input: function(o) {
+      input(o) {
           t(o || this.options.inputElements).filter(":notmdproc").data("mdproc", !0).each(function() {
-              var o = t(this)
+              let o = t(this)
                 , n = o.closest(".form-group");
-              0 !== n.length || "hidden" === o.attr("type") || o.attr("hidden") || (o.wrap("<div class='form-group'></div>"),
+              n.length !== 0 || o.attr("type") === "hidden" || o.attr("hidden") || (o.wrap("<div class='form-group'></div>"),
               n = o.closest(".form-group")),
-              o.attr("data-hint") && (o.after("<p class='help-block'>" + o.attr("data-hint") + "</p>"),
+              o.attr("data-hint") && (o.after(`<p class='help-block'>${  o.attr("data-hint")  }</p>`),
               o.removeAttr("data-hint"));
               if (t.each({
                   "input-lg": "form-group-lg",
                   "input-sm": "form-group-sm"
-              }, function(t, e) {
+              }, (t, e) => {
                   o.hasClass(t) && (o.removeClass(t),
                   n.addClass(e))
               }),
               o.hasClass("floating-label")) {
-                  var e = o.attr("placeholder");
+                  const e = o.attr("placeholder");
                   o.attr("placeholder", null).removeClass("floating-label");
-                  var i = o.attr("id")
+                  let i = o.attr("id")
                     , a = "";
-                  i && (a = "for='" + i + "'"),
+                  i && (a = `for='${  i  }'`),
                   n.addClass("label-floating"),
-                  o.after("<label " + a + "class='control-label'>" + e + "</label>")
+                  o.after(`<label ${  a  }class='control-label'>${  e  }</label>`)
               }
-              null !== o.val() && "undefined" != o.val() && "" !== o.val() || n.addClass("is-empty"),
+              o.val() !== null && o.val() != "undefined" && o.val() !== "" || n.addClass("is-empty"),
               n.find("input[type=file]").length > 0 && n.addClass("is-fileinput")
           })
       },
-      attachInputEventHandlers: function() {
-          var n = this.options.validate;
+      attachInputEventHandlers() {
+          const n = this.options.validate;
           t(document).on("keydown paste", ".form-control", function(o) {
-              var n;
-              (void 0 === (n = o).which || "number" == typeof n.which && n.which > 0 && !n.ctrlKey && !n.metaKey && !n.altKey && 8 != n.which && 9 != n.which && 13 != n.which && 16 != n.which && 17 != n.which && 20 != n.which && 27 != n.which) && t(this).closest(".form-group").removeClass("is-empty")
+              let n;
+              (void 0 === (n = o).which || typeof n.which === "number" && n.which > 0 && !n.ctrlKey && !n.metaKey && !n.altKey && n.which != 8 && n.which != 9 && n.which != 13 && n.which != 16 && n.which != 17 && n.which != 20 && n.which != 27) && t(this).closest(".form-group").removeClass("is-empty")
           }).on("keyup change", ".form-control", function() {
-              var o = t(this)
+              let o = t(this)
                 , e = o.closest(".form-group")
                 , i = void 0 === o[0].checkValidity || o[0].checkValidity();
-              "" === o.val() ? e.addClass("is-empty") : e.removeClass("is-empty"),
+              o.val() === "" ? e.addClass("is-empty") : e.removeClass("is-empty"),
               n && (i ? e.removeClass("has-error") : e.addClass("has-error"))
           }).on("focus", ".form-control, .form-group.is-fileinput", function() {
               o(this)
           }).on("blur", ".form-control, .form-group.is-fileinput", function() {
               e(this)
           }).on("change", ".form-group input", function() {
-              var o = t(this);
-              if ("file" != o.attr("type")) {
-                  var n = o.closest(".form-group");
+              const o = t(this);
+              if (o.attr("type") != "file") {
+                  const n = o.closest(".form-group");
                   o.val() ? n.removeClass("is-empty") : n.addClass("is-empty")
               }
           }).on("change", ".form-group.is-fileinput input[type='file']", function() {
-              var o = t(this).closest(".form-group")
+              let o = t(this).closest(".form-group")
                 , n = "";
-              t.each(this.files, function(t, o) {
-                  n += o.name + ", "
+              t.each(this.files, (t, o) => {
+                  n += `${o.name  }, `
               }),
               (n = n.substring(0, n.length - 2)) ? o.removeClass("is-empty") : o.addClass("is-empty"),
               o.find("input.form-control[readonly]").val(n)
           })
       },
-      ripples: function(o) {
+      ripples(o) {
           t(o || this.options.withRipples).ripples()
       },
-      autofill: function() {
-          var o = setInterval(function() {
+      autofill() {
+          const o = setInterval(() => {
               t("input[type!=checkbox]").each(function() {
-                  var o = t(this);
+                  const o = t(this);
                   o.val() && o.val() !== o.attr("value") && o.trigger("change")
               })
           }, 100);
-          setTimeout(function() {
+          setTimeout(() => {
               clearInterval(o)
           }, 1e4)
       },
-      attachAutofillEventHandlers: function() {
-          var o;
+      attachAutofillEventHandlers() {
+          let o;
           t(document).on("focus", "input", function() {
-              var n = t(this).parents("form").find("input").not("[type=file]");
-              o = setInterval(function() {
+              const n = t(this).parents("form").find("input").not("[type=file]");
+              o = setInterval(() => {
                   n.each(function() {
-                      var o = t(this);
+                      const o = t(this);
                       o.val() !== o.attr("value") && o.trigger("change")
                   })
               }, 100)
-          }).on("blur", ".form-group input", function() {
+          }).on("blur", ".form-group input", () => {
               clearInterval(o)
           })
       },
-      init: function(o) {
+      init(o) {
           this.options = t.extend({}, this.options, o),
           t.fn.ripples && this.options.ripples && this.ripples(),
           this.options.input && (this.input(),
@@ -382,8 +362,8 @@ function(t) {
   }
 }(jQuery),
 function(t, o, n, e) {
-  "use strict";
-  var i = "ripples"
+  
+  let i = "ripples"
     , a = null
     , s = {};
   function r(o, n) {
@@ -395,15 +375,15 @@ function(t, o, n, e) {
       this.init()
   }
   r.prototype.init = function() {
-      var n = this.element;
-      n.on("mousedown touchstart", function(e) {
-          if (!a.isTouch() || "mousedown" !== e.type) {
+      const n = this.element;
+      n.on("mousedown touchstart", (e) => {
+          if (!a.isTouch() || e.type !== "mousedown") {
               n.find(".ripple-container").length || n.append('<div class="ripple-container"></div>');
-              var i = n.children(".ripple-container")
+              let i = n.children(".ripple-container")
                 , s = a.getRelY(i, e)
                 , r = a.getRelX(i, e);
               if (s || r) {
-                  var l = a.getRipplesColor(n)
+                  let l = a.getRipplesColor(n)
                     , c = t("<div></div>");
                   c.addClass("ripple").css({
                       left: r,
@@ -413,12 +393,12 @@ function(t, o, n, e) {
                   i.append(c),
                   o.getComputedStyle(c[0]).opacity,
                   a.rippleOn(n, c),
-                  setTimeout(function() {
+                  setTimeout(() => {
                       a.rippleEnd(c)
                   }, 500),
-                  n.on("mouseup mouseleave touchend", function() {
+                  n.on("mouseup mouseleave touchend", () => {
                       c.data("mousedown", "off"),
-                      "off" === c.data("animating") && a.rippleOut(c)
+                      c.data("animating") === "off" && a.rippleOut(c)
                   })
               }
           }
@@ -430,13 +410,13 @@ function(t, o, n, e) {
   }
   ,
   r.prototype.getRelX = function(t, o) {
-      var n = t.offset();
-      return a.isTouch() ? 1 === (o = o.originalEvent).touches.length && o.touches[0].pageX - n.left : o.pageX - n.left
+      const n = t.offset();
+      return a.isTouch() ? (o = o.originalEvent).touches.length === 1 && o.touches[0].pageX - n.left : o.pageX - n.left
   }
   ,
   r.prototype.getRelY = function(t, o) {
-      var n = t.offset();
-      return a.isTouch() ? 1 === (o = o.originalEvent).touches.length && o.touches[0].pageY - n.top : o.pageY - n.top
+      const n = t.offset();
+      return a.isTouch() ? (o = o.originalEvent).touches.length === 1 && o.touches[0].pageY - n.top : o.pageY - n.top
   }
   ,
   r.prototype.getRipplesColor = function(t) {
@@ -444,7 +424,7 @@ function(t, o, n, e) {
   }
   ,
   r.prototype.hasTransitionSupport = function() {
-      var t = (n.body || n.documentElement).style;
+      const t = (n.body || n.documentElement).style;
       return t.transition !== e || t.WebkitTransition !== e || t.MozTransition !== e || t.MsTransition !== e || t.OTransition !== e
   }
   ,
@@ -454,81 +434,81 @@ function(t, o, n, e) {
   ,
   r.prototype.rippleEnd = function(t) {
       t.data("animating", "off"),
-      "off" === t.data("mousedown") && a.rippleOut(t)
+      t.data("mousedown") === "off" && a.rippleOut(t)
   }
   ,
   r.prototype.rippleOut = function(t) {
       t.off(),
       a.hasTransitionSupport() ? t.addClass("ripple-out") : t.animate({
           opacity: 0
-      }, 100, function() {
+      }, 100, () => {
           t.trigger("transitionend")
       }),
-      t.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
+      t.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", () => {
           t.remove()
       })
   }
   ,
   r.prototype.rippleOn = function(t, o) {
-      var n = a.getNewSize(t, o);
+      const n = a.getNewSize(t, o);
       a.hasTransitionSupport() ? o.css({
-          "-ms-transform": "scale(" + n + ")",
-          "-moz-transform": "scale(" + n + ")",
-          "-webkit-transform": "scale(" + n + ")",
-          transform: "scale(" + n + ")"
+          "-ms-transform": `scale(${  n  })`,
+          "-moz-transform": `scale(${  n  })`,
+          "-webkit-transform": `scale(${  n  })`,
+          transform: `scale(${  n  })`
       }).addClass("ripple-on").data("animating", "on").data("mousedown", "on") : o.animate({
           width: 2 * Math.max(t.outerWidth(), t.outerHeight()),
           height: 2 * Math.max(t.outerWidth(), t.outerHeight()),
           "margin-left": -1 * Math.max(t.outerWidth(), t.outerHeight()),
           "margin-top": -1 * Math.max(t.outerWidth(), t.outerHeight()),
           opacity: .2
-      }, 500, function() {
+      }, 500, () => {
           o.trigger("transitionend")
       })
   }
   ,
   t.fn.ripples = function(o) {
       return this.each(function() {
-          t.data(this, "plugin_" + i) || t.data(this, "plugin_" + i, new r(this,o))
+          t.data(this, `plugin_${  i}`) || t.data(this, `plugin_${  i}`, new r(this,o))
       })
   }
 }(jQuery, window, document),
 window.onresize = tabs;
-var handler = window.onresize;
+const handler = window.onresize;
 function tabs() {
   for (var t = $(".nav.nav-tabs"), o = {}, n = {}, e = 0; e < t.length; e++) {
       var i = e + 1
         , a = $(t[e]).children()
         , s = $(t[e]).children().length;
       $(a[a.length - 1]).hasClass("ms-tabs-indicator") || ($(t[e]).data("id", i),
-      $(t[e]).append('<span id="i' + i + '" class="ms-tabs-indicator"></span>'));
-      var r = $("#i" + i);
-      o["tabW" + i] = [],
-      n["tabL" + i] = [];
-      var l = o["tabW" + i]
-        , c = n["tabL" + i]
+      $(t[e]).append(`<span id="i${  i  }" class="ms-tabs-indicator"></span>`));
+      const r = $(`#i${  i}`);
+      o[`tabW${  i}`] = [],
+      n[`tabL${  i}`] = [];
+      let l = o[`tabW${  i}`]
+        , c = n[`tabL${  i}`]
         , p = 0;
       for (m = 0; m < s; m++)
           c[m] = p,
           l[m] = $(a[m]).width(),
           $(a[m]).children().hasClass("active") && r.css({
-              left: c[m] + "px",
-              width: l[m] + "px"
+              left: `${c[m]  }px`,
+              width: `${l[m]  }px`
           }),
           p += l[m]
   }
   $(".nav.nav-tabs > li").click(function(t) {
-      var e = (a = $(this).parent()).data("id");
+      const e = (a = $(this).parent()).data("id");
       a.children().removeClass("current"),
       $(this).addClass("current");
-      for (var i = a.children(), s = 0; s < i.length - 1; s++)
-          $(i[s]).hasClass("current") && $("#i" + e).css({
-              left: n["tabL" + e][s] + "px",
-              width: o["tabW" + e][s] + "px"
+      for (let i = a.children(), s = 0; s < i.length - 1; s++)
+          $(i[s]).hasClass("current") && $(`#i${  e}`).css({
+              left: `${n[`tabL${  e}`][s]  }px`,
+              width: `${o[`tabW${  e}`][s]  }px`
           })
   })
 }
 handler.apply(window, [" On"]),
-$("#ms-account-modal").on("shown.bs.modal", function(t) {
+$("#ms-account-modal").on("shown.bs.modal", (t) => {
   setTimeout(tabs, 700)
 });

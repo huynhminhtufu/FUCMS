@@ -11,6 +11,10 @@ import React from 'react';
 import Link from '../Link';
 
 class Navigation extends React.Component {
+  componentDidMount() {
+    if (window.afterBodyShowed) window.afterBodyShowed();
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand-md navbar-static ms-navbar ms-navbar-primary">
@@ -86,12 +90,9 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-          <a
-            href="javascript:void(0)"
-            className="ms-toggle-left btn-navbar-menu"
-          >
+          <button className="ms-toggle-left btn-navbar-menu">
             <i className="zmdi zmdi-menu" />
-          </a>
+          </button>
         </div>
       </nav>
     );
