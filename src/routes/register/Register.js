@@ -92,7 +92,7 @@ class Register extends React.Component {
           <div className="card color-dark animated zoomInDown animation-delay-5">
             <div className="card-body">
               <h1 className="color-primary">{title}</h1>
-              <form method="POST" onSubmit={e => this.onFieldChange(e)}>
+              <form onSubmit={e => this.onFieldChange(e)}>
                 <fieldset>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
