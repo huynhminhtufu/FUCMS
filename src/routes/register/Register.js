@@ -97,37 +97,88 @@ class Register extends React.Component {
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
                       <span className="input-group-addon">
-                        <i className="zmdi zmdi-card"></i>
+                        <i className="zmdi zmdi-card" />
                       </span>
-                      <label className="control-label" htmlFor="ms-form-user">Full name</label>
-                      <input type="text" id="ms-form-name" className="form-control" autoFocus/> </div>
+                      <label className="control-label" htmlFor="ms-form-name">
+                        Full name
+                      </label>
+                      <input
+                        type="text"
+                        id="ms-form-name"
+                        className="form-control"
+                        name="name"
+                        autoFocus
+                        onChange={e => this.onFieldChange(e)}
+                      />
+                    </div>
                   </div>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
                       <span className="input-group-addon">
-                        <i className="zmdi zmdi-account"></i>
+                        <i className="zmdi zmdi-email" />
                       </span>
-                      <label className="control-label" htmlFor="ms-form-user">Username</label>
-                      <input type="text" id="ms-form-user" className="form-control" /> </div>
+                      <label className="control-label" htmlFor="ms-form-user">
+                        Email
+                      </label>
+                      <input
+                        type="text"
+                        id="ms-form-email"
+                        className="form-control"
+                        name="email"
+                        onChange={e => this.onFieldChange(e)}
+                      />
+                    </div>
                   </div>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
                       <span className="input-group-addon">
-                        <i className="zmdi zmdi-lock"></i>
+                        <i className="zmdi zmdi-account" />
                       </span>
-                      <label className="control-label" htmlFor="ms-form-pass">Password</label>
-                      <input type="password" id="ms-form-pass" className="form-control" /> </div>
+                      <label className="control-label" htmlFor="ms-form-user">
+                        Username
+                      </label>
+                      <input
+                        type="text"
+                        id="ms-form-user"
+                        className="form-control"
+                        name="username"
+                        onChange={e => this.onFieldChange(e)}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group label-floating is-empty">
+                    <div className="input-group">
+                      <span className="input-group-addon">
+                        <i className="zmdi zmdi-lock" />
+                      </span>
+                      <label className="control-label" htmlFor="ms-form-pass">
+                        Password
+                      </label>
+                      <input
+                        type="password"
+                        id="ms-form-pass"
+                        className="form-control"
+                        name="password"
+                        onChange={e => this.onFieldChange(e)}
+                      />
+                    </div>
                   </div>
                   <div className="row ">
                     <div className="col-md-6">
-                      <button className="btn btn-raised btn-primary btn-block">
-                        <i className="zmdi zmdi-account-add mr-1"></i> Sign up
+                      <button
+                        onClick={e => {
+                          e.preventDefault();
+                          this.handleSignUp();
+                        }}
+                        className="btn btn-raised btn-primary btn-block"
+                      >
+                        <i className="zmdi zmdi-account-add mr-1" /> Sign up
                       </button>
                     </div>
                     <div className="col-md-6">
                       <Link to="/login" className="btn btn-primary btn-block">
                         Login
-                        <i className="zmdi zmdi-long-arrow-right no-mr ml-1"></i>
+                        <i className="zmdi zmdi-long-arrow-right no-mr ml-1" />
                       </Link>
                     </div>
                   </div>
@@ -135,20 +186,34 @@ class Register extends React.Component {
               </form>
               <div className="text-center">
                 <h3 className="color-dark">Login with</h3>
-                <a href="/login/facebook" className="wave-effect-light btn btn-raised btn-facebook">
-                  <i className="zmdi zmdi-facebook"></i> Facebook</a>
-                <a href="/login/twitter" className="wave-effect-light btn btn-raised btn-twitter">
-                  <i className="zmdi zmdi-twitter"></i> Twitter</a>
-                <a href="/login/google" className="wave-effect-light btn btn-raised btn-google">
-                  <i className="zmdi zmdi-google"></i> Google</a>
+                <a
+                  href="/login/facebook"
+                  className="wave-effect-light btn btn-raised btn-facebook"
+                >
+                  <i className="zmdi zmdi-facebook" />Facebook
+                </a>
+                <a
+                  href="/login/twitter"
+                  className="wave-effect-light btn btn-raised btn-twitter"
+                >
+                  <i className="zmdi zmdi-twitter" /> Twitter
+                </a>
+                <a
+                  href="/login/google"
+                  className="wave-effect-light btn btn-raised btn-google"
+                >
+                  <i className="zmdi zmdi-google" /> Google
+                </a>
               </div>
             </div>
           </div>
           <div className="text-center animated fadeInUp animation-delay-7">
             <Link to="/" className="btn btn-white">
-              <i className="zmdi zmdi-home"></i> Go Home</Link>
+              <i className="zmdi zmdi-home" /> Go Home
+            </Link>
             <Link to="/" className="btn btn-white">
-              <i className="zmdi zmdi-key"></i> Recovery Pass</Link>
+              <i className="zmdi zmdi-key" /> Recovery Pass
+            </Link>
           </div>
         </div>
       </div>
