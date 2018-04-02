@@ -12,7 +12,13 @@ import Link from '../Link';
 
 class Navigation extends React.Component {
   componentDidMount() {
-    if (window.afterBodyShowed) window.afterBodyShowed();
+    if (window.navbarFixed) {
+      window.navbarFixed();
+    }
+
+    if (window.dropdownHover) {
+      window.dropdownHover();
+    }
   }
 
   render() {
@@ -52,19 +58,19 @@ class Navigation extends React.Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/coming-soon">
+                    <Link className="dropdown-item" to="/coming-soon">
                       Web Develop
-                    </a>
+                    </Link>
                   </li>
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/coming-soon">
+                    <Link className="dropdown-item" to="/coming-soon">
                       Android Develop
-                    </a>
+                    </Link>
                   </li>
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/coming-soon">
+                    <Link className="dropdown-item" to="/coming-soon">
                       iOS Develop
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
