@@ -206,7 +206,6 @@ function action() {
             </div>
           </div>
         </div>
-        {/* <Page {...about} /> */}
       </Layout>
     ),
   };
