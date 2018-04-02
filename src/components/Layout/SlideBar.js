@@ -6,11 +6,6 @@ class Slidebar extends Component {
       window.slidebar();
     }    
   }
-  
-  handleCloseSidebar() {
-    $(".ms-slidebar").removeClass("open");
-    window.slidebar();
-  }
 
   render() {
     return (
@@ -18,9 +13,9 @@ class Slidebar extends Component {
         <div className="sb-slidebar-container">
           <header className="ms-slidebar-header">
             <div className="ms-slidebar-login">
-              <a href="#" className="withripple" data-toggle="modal" data-target="#ms-account-modal" onClick={() => this.handleCloseSidebar()}>
-                <i className="zmdi zmdi-account" /> Login</a>
-              <a href="#" className="withripple" data-toggle="modal" data-target="#ms-account-modal" onClick={() => this.handleCloseSidebar()}>
+              <a href="#" className="withripple ms-toggle-left" data-toggle="modal" data-target="#ms-account-modal">
+                <i className="zmdi zmdi-account ms-toggle-left" /> Login</a>
+              <a href="#" className="withripple ms-toggle-left" data-toggle="modal" data-target="#ms-account-modal">
                 <i className="zmdi zmdi-account-add" /> Register</a>
             </div>
             <div className="ms-slidebar-title">
