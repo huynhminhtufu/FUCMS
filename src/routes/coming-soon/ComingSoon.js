@@ -64,7 +64,7 @@ class ComingSoon extends React.Component {
                     <form>
                       <div className="form-group label-floating mt-2 mb-1 is-empty">
                         <div className="input-group center-block">
-                          <label className="control-label" for="ms-subscribe">
+                          <label className="control-label" htmlFor="ms-subscribe">
                             <i className="zmdi zmdi-email"></i> Email Adress</label>
                           <input type="email" id="ms-subscribe" className="form-control" /> </div>
                       </div>
