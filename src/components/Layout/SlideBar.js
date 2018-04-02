@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from '../Link';
 
 class Slidebar extends Component {
   componentDidMount() {
@@ -39,19 +40,16 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-home" /> Home </a>
               <ul id="sc1" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch1" data-parent="#slidebar-menu">
                 <li>
-                  <a href="/">Default Home</a>
+                  <Link to="/">Default Home</Link>
                 </li>
                 <li>
-                  <a href="/">Home Black Slider</a>
+                  <Link to="/coming-soon">E-Learning System</Link>
                 </li>
                 <li>
-                  <a href="/">Home Landing Intro</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <a href="/">Home Landing Video</a>
-                </li>
-                <li>
-                  <a href="/">Home Shop 1</a>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </li>

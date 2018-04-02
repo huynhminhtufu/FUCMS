@@ -26,7 +26,7 @@ class LoginModal extends Component {
                   </li>
                   <li className="nav-item" role="presentation">
                     <a href="#ms-register-tab" aria-controls="ms-register-tab" role="tab" data-toggle="tab" className="nav-link withoutripple">
-                      <i className="zmdi zmdi-account-add" /> Register</a>
+                      <i className="zmdi zmdi-account-add" /> Sign Up</a>
                   </li>
                   <li className="nav-item" role="presentation">
                     <a href="#ms-recovery-tab" aria-controls="ms-recovery-tab" role="tab" data-toggle="tab" className="nav-link withoutripple">
@@ -116,7 +116,7 @@ class LoginModal extends Component {
                           <label className="control-label" htmlFor="ms-form-pass-rn">Re-type Password</label>
                           <input type="password" id="ms-form-pass-rn" className="form-control" /> </div>
                       </div>
-                      <button className="btn btn-raised btn-block btn-primary">Register Now</button>
+                      <button className="btn btn-raised btn-block btn-primary">Sign Up Now</button>
                     </fieldset>
                   </form>
                 </div>

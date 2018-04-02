@@ -94,7 +94,7 @@ function action() {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <div className="card card-warning wow zoomInUp mb-4 animation-delay-5">
+              <div className="card card-royal wow zoomInUp mb-4 animation-delay-7">
                 <div className="withripple zoom-img">
                   <a href="/contact" className="">
                     <img
@@ -138,7 +138,7 @@ function action() {
                     <div className="col text-right">
                       <a
                         href="/about"
-                        className="btn btn-raised btn-sm btn-warning"
+                        className="btn btn-raised btn-sm btn-royal"
                       >
                         <i className="zmdi zmdi-account" />
                         Profile
@@ -150,7 +150,7 @@ function action() {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <div className="card card-warning wow zoomInUp mb-4 animation-delay-5">
+              <div className="card card-success wow zoomInUp mb-4 animation-delay-9">
                 <div className="withripple zoom-img">
                   <a href="/contact" className="">
                     <img
@@ -194,7 +194,7 @@ function action() {
                     <div className="col text-right">
                       <a
                         href="/about"
-                        className="btn btn-raised btn-sm btn-warning"
+                        className="btn btn-raised btn-sm btn-success"
                       >
                         <i className="zmdi zmdi-account" />
                         Profile
