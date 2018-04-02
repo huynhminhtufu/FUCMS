@@ -52,17 +52,17 @@ class Navigation extends React.Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="/coming-soon">
                       Web Develop
                     </a>
                   </li>
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="/coming-soon">
                       Android Develop
                     </a>
                   </li>
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="/coming-soon">
                       iOS Develop
                     </a>
                   </li>
@@ -80,7 +80,7 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-          <button className="ms-toggle-left btn-navbar-menu">
+          <button className="ms-toggle-left btn-navbar-menu d-none d-sm-block d-md-none">
             <i className="zmdi zmdi-menu" />
           </button>
         </div>

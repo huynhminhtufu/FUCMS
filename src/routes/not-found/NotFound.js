@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import Link from '../../components/Link';
 
 class NotFound extends React.Component {
   render() {
@@ -23,9 +24,9 @@ class NotFound extends React.Component {
                   We have not found what you are looking for.
                   <br />We have put our robots to search.
                 </p>
-                <a href="/" className="btn btn-primary btn-raised">
+                <Link to="/" className="btn btn-primary btn-raised">
                   <i className="zmdi zmdi-home" /> Go Home
-                </a>
+                </Link>
               </div>
             </div>
           </div>

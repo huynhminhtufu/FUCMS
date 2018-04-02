@@ -77,9 +77,9 @@ class Register extends React.Component {
 
     const result = await fetchApi({ query });
     if (result.data.addUser.id) {
-      alert('Success');
+      // success handle
     } else {
-      alert('Fail');
+      // fail handle
     }
   }
 
@@ -121,7 +121,7 @@ class Register extends React.Component {
                         Email
                       </label>
                       <input
-                        type="text"
+                        type="email"
                         id="ms-form-email"
                         className="form-control"
                         name="email"

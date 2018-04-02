@@ -21,7 +21,7 @@ function action() {
         <div className="container">
           <div className="row">
             <div className="col-xl-8 col-lg-7">
-              <div className="card card-primary animated fadeInUp animation-delay-7">
+              <div className="card card-primary animated fadeInUp animation-delay-2">
                 <div className="ms-hero-bg-primary ms-hero-img-mountain">
                   <h2 className="text-center no-m pt-4 pb-4 color-white index-1">
                     Send us a message!
