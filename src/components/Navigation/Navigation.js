@@ -33,8 +33,40 @@ class Navigation extends React.Component {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  Homepage
+                  Home
                 </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  href="#"
+                  className="nav-link dropdown-toggle animated fadeIn animation-delay-7"
+                  data-toggle="dropdown"
+                  data-hover="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-name="page"
+                >
+                  E-Learning System
+                  <i className="zmdi zmdi-chevron-down" />
+                </a>
+                <ul className="dropdown-menu">
+                  <li className="dropdown-submenu">
+                    <a className="dropdown-item" href="/">
+                      Web Develop
+                    </a>
+                  </li>
+                  <li className="dropdown-submenu">
+                    <a className="dropdown-item" href="/">
+                      Android Develop
+                    </a>
+                  </li>
+                  <li className="dropdown-submenu">
+                    <a className="dropdown-item" href="/">
+                      iOS Develop
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">

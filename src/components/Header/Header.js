@@ -25,7 +25,7 @@ class Header extends React.Component {
               </span>
               <h1 className="animated fadeInRight animation-delay-6">
                 CMS
-                <span> - Beta</span>
+                <span>Beta</span>
               </h1>
             </Link>
           </div>
