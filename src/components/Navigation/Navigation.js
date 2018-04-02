@@ -39,7 +39,7 @@ class Navigation extends React.Component {
               <li className="nav-item dropdown">
                 <a
                   href="#"
-                  className="nav-link dropdown-toggle animated fadeIn animation-delay-7"
+                  className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   data-hover="dropdown"
                   role="button"

@@ -26,9 +26,9 @@ class Slidebar extends Component {
                 </label>
               </form>
               <div className="ms-slidebar-t">
-                <span className="ms-logo ms-logo-sm">M</span>
-                <h3>Material
-                    <span>Style</span>
+                <span className="ms-logo ms-logo-sm">FU</span>
+                <h3>CMS
+                    <span>Beta</span>
                 </h3>
               </div>
             </div>

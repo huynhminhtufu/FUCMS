@@ -14,8 +14,8 @@ class LoginModal extends Component {
               </button>
               <div className="modal-title text-center">
                 <span className="ms-logo ms-logo-white ms-logo-sm mr-1">FU</span>
-                <h3 className="no-m ms-site-title">FU
-                  <span>CMS</span>
+                <h3 className="no-m ms-site-title">CMS
+                  <span>Beta</span>
                 </h3>
               </div>
               <div className="modal-header-tabs">
