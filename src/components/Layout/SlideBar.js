@@ -14,7 +14,7 @@ class Slidebar extends Component {
           <header className="ms-slidebar-header">
             <div className="ms-slidebar-login">
               <a href="#" className="withripple ms-toggle-left" data-toggle="modal" data-target="#ms-account-modal">
-                <i className="zmdi zmdi-account ms-toggle-left" /> Login</a>
+                <i className="zmdi zmdi-account" /> Login</a>
               <a href="#" className="withripple ms-toggle-left" data-toggle="modal" data-target="#ms-account-modal">
                 <i className="zmdi zmdi-account-add" /> Register</a>
             </div>

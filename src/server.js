@@ -160,7 +160,6 @@ app.get('*', async (req, res, next) => {
         value: Date.now(),
       }),
     );
-    console.log(req.path);
 
     // Global (context) variables that can be easily accessed from any React component
     // https://facebook.github.io/react/docs/context.html
@@ -174,6 +173,7 @@ app.get('*', async (req, res, next) => {
       // You can access redux through react-redux connect
       store,
       storeSubscription: null,
+      isServer: true,
     };
 
     const route = await router.resolve(context);

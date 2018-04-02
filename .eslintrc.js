@@ -16,7 +16,7 @@ module.exports = {
     // 'airbnb',
     'plugin:flowtype/recommended',
     'plugin:css-modules/recommended',
-    'prettier',
+    // 'prettier',
     'prettier/flowtype',
     'prettier/react',
   ],
@@ -34,7 +34,7 @@ module.exports = {
   rules: {
     // Forbid the use of extraneous packages
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
+    // 'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
 
     // Recommend not to leave any console.log in your code
     // Use console.error, console.warn and console.info instead

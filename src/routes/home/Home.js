@@ -21,9 +21,43 @@ class Home extends React.Component {
     ).isRequired,
   };
 
+  static contextTypes = {
+    isServer: PropTypes.bool.isRequired,
+    fetch: PropTypes.func.isRequired,
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      news: props.news
+    };
+  }
+
+  async componentDidMount() {
+    const { isServer, fetch } = this.context;
+
+    if (isServer) {
+      return;
+    }
+
+    // get news feed for client
+    const resp = await fetch('/graphql', {
+      body: JSON.stringify({
+        query: '{news{title,link,content}}',
+      }),
+    });
+    const { data } = await resp.json();
+
+    this.setState({
+      news: data.news,
+    });
+  }
+
   render() {
     // List RSS size
     const size = 5;
+    const { news } = this.state;
 
     return (
       <div>
@@ -48,7 +82,7 @@ class Home extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              {this.props.news.slice(0, size).map((item, index) => (
+              {news.slice(0, size).map((item, index) => (
                 <article key={item.link} className="card card-primary">
                   <div className="card-header">
                     <h3 className="card-title">
@@ -89,7 +123,7 @@ class Home extends React.Component {
                     src="https://i.imgur.com/Wl4wOFG.png"
                     alt="..."
                     className="img-avatar-circle"
-                  />{' '}
+                  />
                 </div>
                 <div className="card-body pt-4 text-center">
                   <h3 className="color-primary">About us</h3>
