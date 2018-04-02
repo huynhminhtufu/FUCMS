@@ -1,3 +1,7 @@
 .card-body img {
   max-width: 96%;
 }
+
+button {
+  background-color: inherit;
+}
