@@ -11,6 +11,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Home extends React.Component {
+
   static propTypes = {
     news: PropTypes.arrayOf(
       PropTypes.shape({
@@ -30,7 +31,8 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      news: props.news
+      news: props.news,
+      feedSize: 2
     };
   }
 
@@ -54,10 +56,16 @@ class Home extends React.Component {
     });
   }
 
+  handleLoadMore() {
+    this.setState({
+      feedSize: this.state.feedSize + 2,
+    });
+  }
+
   render() {
     // List RSS size
     const size = 5;
-    const { news } = this.state;
+    const { news, feedSize } = this.state;
 
     return (
       <div>
@@ -82,8 +90,9 @@ class Home extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              {news.slice(0, size).map((item, index) => (
-                <article key={item.link} className="card card-primary">
+              <h1 className="right-line right-none-white">What's Hot?</h1>
+              {news.slice(0, feedSize).map((item, index) => (
+                <article key={item.link} className="card card-primary animated fadeInLeft animation-delay-2">
                   <div className="card-header">
                     <h3 className="card-title">
                       <a
@@ -108,10 +117,17 @@ class Home extends React.Component {
                   </div>
                 </article>
               ))}
+              <div className="text-center">
+                <div className="progress progress-xs">
+                  <div className="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style={{ width: `${this.state.feedSize * 10}%` }}>
+                  </div>
+                </div>
+              </div>
+              {this.state.feedSize !== 10 && <div className="text-center"><button className="btn btn-block btn-raised btn-royal" onClick={() => this.handleLoadMore()}>Load more...</button></div>}
             </div>
 
             <div className="col-lg-4">
-              <div className="card animated fadeInUp animation-delay-7">
+              <div className="card animated">
                 <div className="ms-hero-bg-royal ms-hero-img-coffee">
                   <h3 className="color-white index-1 text-center no-m pt-4">
                     FU Writer
@@ -153,7 +169,7 @@ class Home extends React.Component {
                 </div>
               </div>
 
-              <div className="card card-primary animated fadeInUp animation-delay-7">
+              <div className="card card-primary">
                 <div className="card-header">
                   <h3 className="card-title">
                     <i className="zmdi zmdi-widgets" />Advertising
@@ -166,6 +182,14 @@ class Home extends React.Component {
                     nesciunt laudantium, ex id ea, cum facilis similique tenetur
                     fugit nemo id minima possimus.
                   </p>
+                </div>
+              </div>
+
+              <div className="col">
+                <div className="panel panel-body text-center p-2">
+                  <h2 className="counter">1234</h2>
+                  <i className="fa fa-4x fa-group primary-color"></i>
+                  <p className="mt-2 no-mb lead small-caps">total visitors</p>
                 </div>
               </div>
             </div>

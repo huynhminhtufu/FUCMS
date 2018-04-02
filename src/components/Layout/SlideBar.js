@@ -4,7 +4,7 @@ class Slidebar extends Component {
   componentDidMount() {
     if (window.slidebar) {
       window.slidebar();
-    }    
+    }
   }
 
   render() {
@@ -39,19 +39,19 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-home" /> Home </a>
               <ul id="sc1" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch1" data-parent="#slidebar-menu">
                 <li>
-                  <a href="index-2.html">Default Home</a>
+                  <a href="/">Default Home</a>
                 </li>
                 <li>
-                  <a href="home-generic-2.html">Home Black Slider</a>
+                  <a href="/">Home Black Slider</a>
                 </li>
                 <li>
-                  <a href="home-landing.html">Home Landing Intro</a>
+                  <a href="/">Home Landing Intro</a>
                 </li>
                 <li>
-                  <a href="home-landing3.html">Home Landing Video</a>
+                  <a href="/">Home Landing Video</a>
                 </li>
                 <li>
-                  <a href="home-shop.html">Home Shop 1</a>
+                  <a href="/">Home Shop 1</a>
                 </li>
               </ul>
             </li>
@@ -60,34 +60,34 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-desktop-mac" /> Pages </a>
               <ul id="sc2" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch2" data-parent="#slidebar-menu">
                 <li>
-                  <a href="page-about.html">About US</a>
+                  <a href="/">About US</a>
                 </li>
                 <li>
-                  <a href="page-team.html">Our Team</a>
+                  <a href="/">Our Team</a>
                 </li>
                 <li>
-                  <a href="page-product.html">Products</a>
+                  <a href="/">Products</a>
                 </li>
                 <li>
-                  <a href="page-services.html">Services</a>
+                  <a href="/">Services</a>
                 </li>
                 <li>
-                  <a href="page-faq.html">FAQ</a>
+                  <a href="/">FAQ</a>
                 </li>
                 <li>
-                  <a href="page-timeline_left.html">Timeline</a>
+                  <a href="/">Timeline</a>
                 </li>
                 <li>
-                  <a href="page-contact.html">Contact Option</a>
+                  <a href="/">Contact Option</a>
                 </li>
                 <li>
-                  <a href="page-login.html">Login</a>
+                  <a href="/">Login</a>
                 </li>
                 <li>
-                  <a href="page-pricing.html">Pricing</a>
+                  <a href="/">Pricing</a>
                 </li>
                 <li>
-                  <a href="page-coming.html">Coming Soon</a>
+                  <a href="/">Coming Soon</a>
                 </li>
               </ul>
             </li>
@@ -96,28 +96,28 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-edit" /> Blog </a>
               <ul id="sc4" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch4" data-parent="#slidebar-menu">
                 <li>
-                  <a href="blog-sidebar.html">Blog Sidebar 1</a>
+                  <a href="/">Blog Sidebar 1</a>
                 </li>
                 <li>
-                  <a href="blog-sidebar2.html">Blog Sidebar 2</a>
+                  <a href="/">Blog Sidebar 2</a>
                 </li>
                 <li>
-                  <a href="blog-masonry.html">Blog Masonry 1</a>
+                  <a href="/">Blog Masonry 1</a>
                 </li>
                 <li>
-                  <a href="blog-masonry2.html">Blog Masonry 2</a>
+                  <a href="/">Blog Masonry 2</a>
                 </li>
                 <li>
-                  <a href="blog-full.html">Blog Full Page 1</a>
+                  <a href="/">Blog Full Page 1</a>
                 </li>
                 <li>
-                  <a href="blog-full2.html">Blog Full Page 2</a>
+                  <a href="/">Blog Full Page 2</a>
                 </li>
                 <li>
-                  <a href="blog-post.html">Blog Post 1</a>
+                  <a href="/">Blog Post 1</a>
                 </li>
                 <li>
-                  <a href="blog-post2.html">Blog Post 2</a>
+                  <a href="/">Blog Post 2</a>
                 </li>
               </ul>
             </li>
@@ -126,19 +126,19 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-shopping-basket" /> E-Commerce </a>
               <ul id="sc5" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch5" data-parent="#slidebar-menu">
                 <li>
-                  <a href="ecommerce-filters.html">E-Commerce Sidebar</a>
+                  <a href="/">E-Commerce Sidebar</a>
                 </li>
                 <li>
-                  <a href="ecommerce-filters-full.html">E-Commerce Sidebar Full</a>
+                  <a href="/">E-Commerce Sidebar Full</a>
                 </li>
                 <li>
-                  <a href="ecommerce-filters-full2.html">E-Commerce Topbar Full</a>
+                  <a href="/">E-Commerce Topbar Full</a>
                 </li>
                 <li>
-                  <a href="ecommerce-item.html">E-Commerce Item</a>
+                  <a href="/">E-Commerce Item</a>
                 </li>
                 <li>
-                  <a href="ecommerce-cart.html">E-Commerce Cart</a>
+                  <a href="/">E-Commerce Cart</a>
                 </li>
               </ul>
             </li>
@@ -147,28 +147,28 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-collection-image-o" /> Portfolio </a>
               <ul id="sc6" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch6" data-parent="#slidebar-menu">
                 <li>
-                  <a href="portfolio-filters_sidebar.html">Portfolio Sidebar Filters</a>
+                  <a href="/">Portfolio Sidebar Filters</a>
                 </li>
                 <li>
-                  <a href="portfolio-filters_topbar.html">Portfolio Topbar Filters</a>
+                  <a href="/">Portfolio Topbar Filters</a>
                 </li>
                 <li>
-                  <a href="portfolio-filters_sidebar_fluid.html">Portfolio Sidebar Fluid</a>
+                  <a href="/">Portfolio Sidebar Fluid</a>
                 </li>
                 <li>
-                  <a href="portfolio-filters_topbar_fluid.html">Portfolio Topbar Fluid</a>
+                  <a href="/">Portfolio Topbar Fluid</a>
                 </li>
                 <li>
-                  <a href="portfolio-cards.html">Porfolio Cards</a>
+                  <a href="/">Porfolio Cards</a>
                 </li>
                 <li>
-                  <a href="portfolio-masonry.html">Porfolio Masonry</a>
+                  <a href="/">Porfolio Masonry</a>
                 </li>
                 <li>
-                  <a href="portfolio-item.html">Portfolio Item 1</a>
+                  <a href="/">Portfolio Item 1</a>
                 </li>
                 <li>
-                  <a href="portfolio-item2.html">Portfolio Item 2</a>
+                  <a href="/">Portfolio Item 2</a>
                 </li>
               </ul>
             </li>

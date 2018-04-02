@@ -20,10 +20,10 @@ class Header extends React.Component {
         <div className="container container-full">
           <div className="ms-title">
             <Link to="/">
-              <span className="ms-logo animated zoomInDown animation-delay-5">
+              <span className="ms-logo animated zoomInDown animation-delay-2">
                 FU
               </span>
-              <h1 className="animated fadeInRight animation-delay-6">
+              <h1>
                 CMS
                 <span>Beta</span>
               </h1>
@@ -75,7 +75,7 @@ class Header extends React.Component {
                 <i className="zmdi zmdi-search" />
               </label>
             </form>
-            <button className="btn-ms-menu btn-circle btn-circle-primary ms-toggle-left animated zoomInDown animation-delay-10">
+            <button className="btn-ms-menu btn-circle btn-circle-primary ms-toggle-left animated zoomInDown animation-delay-10 d-none d-sm-block d-md-none">
               <i className="zmdi zmdi-menu" />
             </button>
           </div>

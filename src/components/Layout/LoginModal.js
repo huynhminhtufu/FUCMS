@@ -38,7 +38,7 @@ class LoginModal extends Component {
             <div className="modal-body">
               <div className="tab-content">
                 <div role="tabpanel" className="tab-pane fade active show" id="ms-login-tab">
-                  <form autoComplete="off">
+                  <form autoComplete="off" action="/login">
                     <fieldset>
                       <div className="form-group label-floating">
                         <div className="input-group">
@@ -82,7 +82,7 @@ class LoginModal extends Component {
                   </div>
                 </div>
                 <div role="tabpanel" className="tab-pane fade" id="ms-register-tab">
-                  <form>
+                  <form action="/register">
                     <fieldset>
                       <div className="form-group label-floating">
                         <div className="input-group">

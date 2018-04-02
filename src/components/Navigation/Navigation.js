@@ -20,8 +20,8 @@ class Navigation extends React.Component {
       <nav className="navbar navbar-expand-md navbar-static ms-navbar ms-navbar-primary">
         <div className="container container-full">
           <div className="navbar-header">
-            <a className="navbar-brand" href="index-2.html">
-              {/* <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> --> */}
+            <a className="navbar-brand" href="/">
+              {/* <img src="assets/img/demo/logo-navbar.png" alt=""/> */}
               <span className="ms-logo ms-logo-sm">FU</span>
               <span className="ms-title">
                 CMS
@@ -52,17 +52,17 @@ class Navigation extends React.Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="/coming-soon">
                       Web Develop
                     </a>
                   </li>
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="/coming-soon">
                       Android Develop
                     </a>
                   </li>
                   <li className="dropdown-submenu">
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="/coming-soon">
                       iOS Develop
                     </a>
                   </li>
@@ -78,19 +78,9 @@ class Navigation extends React.Component {
                   Contact
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Log in
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/register">
-                  Sign up
-                </Link>
-              </li>
             </ul>
           </div>
-          <button className="ms-toggle-left btn-navbar-menu">
+          <button className="ms-toggle-left btn-navbar-menu d-none d-sm-block d-md-none">
             <i className="zmdi zmdi-menu" />
           </button>
         </div>
