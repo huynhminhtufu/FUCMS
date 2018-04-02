@@ -49,7 +49,7 @@ class Slidebar extends Component {
                   <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </li>
