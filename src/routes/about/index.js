@@ -106,7 +106,7 @@ function action() {
                 </div>
                 <div className="card-body">
                   <span className="label label-warning pull-right">
-                    Developer
+                    Delivery
                   </span>
                   <h3 className="color-warning">Tu Huynh Minh</h3>
                   <p>

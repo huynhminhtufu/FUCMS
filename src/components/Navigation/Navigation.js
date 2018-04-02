@@ -80,6 +80,11 @@ class Navigation extends React.Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/support-center">
+                  Support Center
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
