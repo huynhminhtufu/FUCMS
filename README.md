@@ -1,13 +1,17 @@
 # FUCMS Development Branch
 
-CMS Project made by FU Student
+## CMS + Elearning + Social
 
-Materials: ReactJS, NodeJS, GraphQL, SQLite.
+CMS Project made by FU Team
 
-Homepage: [fucms.codeismylife.me](http://fucms.codeismylife.me)
+Materials: ReactJS, NodeJS, GraphQL, MySQL.
+
+Homepage: [fu-cms.herokuapp.com](http://fu-cms.herokuapp.com)
 
 --- Authors:
 
 Tran Cong Minh
 
 Huynh Minh Tu
+
+Doan Cong Thanh
