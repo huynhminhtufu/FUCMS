@@ -11,6 +11,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      feedSize: 2
+    };
+  }
+
   static propTypes = {
     news: PropTypes.arrayOf(
       PropTypes.shape({
@@ -21,10 +28,14 @@ class Home extends React.Component {
     ).isRequired,
   };
 
+  handleLoadMore() {
+    this.setState({
+      feedSize: this.state.feedSize + 2
+    });
+  }
+
   render() {
     // List RSS size
-    const size = 5;
-
     return (
       <div>
         <div className="ms-hero-page-override ms-hero-img-keyboard ms-hero-bg-primary mb-6">
@@ -48,7 +59,7 @@ class Home extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              {this.props.news.slice(0, size).map((item, index) => (
+              {this.props.news.slice(0, this.state.feedSize).map((item, index) => (
                 <article key={item.link} className="card card-primary">
                   <div className="card-header">
                     <h3 className="card-title">
@@ -74,6 +85,7 @@ class Home extends React.Component {
                   </div>
                 </article>
               ))}
+              <div className="text-center"><button className="btn btn-block btn-raised btn-royal" onClick={() => this.handleLoadMore()}>Load more...</button></div>
             </div>
 
             <div className="col-lg-4">

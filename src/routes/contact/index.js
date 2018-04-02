@@ -24,7 +24,7 @@ function action() {
               <div className="card card-primary animated fadeInUp animation-delay-7">
                 <div className="ms-hero-bg-primary ms-hero-img-mountain">
                   <h2 className="text-center no-m pt-4 pb-4 color-white index-1">
-                    Contact
+                    Send us a message!
                   </h2>
                 </div>
                 <div className="card-body">
@@ -103,7 +103,7 @@ function action() {
                             type="submit"
                             className="btn btn-raised btn-primary"
                           >
-                            Submit
+                            Send
                           </button>
                           <button type="button" className="btn btn-danger">
                             Cancel
@@ -128,15 +128,15 @@ function action() {
                   <address className="no-mb">
                     <p>
                       <i className="color-danger-light zmdi zmdi-pin mr-1" />{' '}
-                      795 Folsom Ave, Suite 600
+                      Innovation Building, QTSC
                     </p>
                     <p>
                       <i className="color-warning-light zmdi zmdi-map mr-1" />{' '}
-                      San Francisco, CA 94107
+                      Ho Chi Minh City, HCMC
                     </p>
                     <p>
                       <i className="color-info-light zmdi zmdi-email mr-1" />
-                      <a href="mailto:joe@example.com">contact@fucms.com</a>
+                      <a href="mailto:joe@example.com">contact@futeam.com</a>
                     </p>
                     <p>
                       <i className="color-royal-light zmdi zmdi-phone mr-1" />+34
