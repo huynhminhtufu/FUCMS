@@ -20,8 +20,8 @@ class Navigation extends React.Component {
       <nav className="navbar navbar-expand-md navbar-static ms-navbar ms-navbar-primary">
         <div className="container container-full">
           <div className="navbar-header">
-            <a className="navbar-brand" href="index-2.html">
-              {/* <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> --> */}
+            <a className="navbar-brand" href="/">
+              {/* <img src="assets/img/demo/logo-navbar.png" alt=""/> */}
               <span className="ms-logo ms-logo-sm">FU</span>
               <span className="ms-title">
                 CMS
@@ -76,16 +76,6 @@ class Navigation extends React.Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Log in
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/register">
-                  Sign up
                 </Link>
               </li>
             </ul>

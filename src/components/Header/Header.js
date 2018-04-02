@@ -75,7 +75,7 @@ class Header extends React.Component {
                 <i className="zmdi zmdi-search" />
               </label>
             </form>
-            <button className="btn-ms-menu btn-circle btn-circle-primary ms-toggle-left animated zoomInDown animation-delay-10">
+            <button className="btn-ms-menu btn-circle btn-circle-primary ms-toggle-left animated zoomInDown animation-delay-10 d-none d-sm-block d-md-none">
               <i className="zmdi zmdi-menu" />
             </button>
           </div>
