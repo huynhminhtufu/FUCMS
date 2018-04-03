@@ -176,7 +176,7 @@ class Register extends React.Component {
                       </button>
                     </div>
                     <div className="col-md-6">
-                      <Link to="/login" className="btn btn-primary btn-block">
+                      <Link href="/login" className="btn btn-primary btn-block">
                         Login
                         <i className="zmdi zmdi-long-arrow-right no-mr ml-1" />
                       </Link>
@@ -208,10 +208,10 @@ class Register extends React.Component {
             </div>
           </div>
           <div className="text-center animated fadeInUp animation-delay-7">
-            <Link to="/" className="btn btn-white">
+            <Link href="/" className="btn btn-white">
               <i className="zmdi zmdi-home" /> Go Home
             </Link>
-            <Link to="/" className="btn btn-white">
+            <Link href="/" className="btn btn-white">
               <i className="zmdi zmdi-key" /> Recovery Pass
             </Link>
           </div>

@@ -26,7 +26,7 @@ class Login extends React.Component {
                         <i className="zmdi zmdi-account"></i>
                       </span>
                       <label className="control-label" htmlFor="ms-form-user">Username</label>
-                      <input type="text" id="ms-form-user" className="form-control" autoFocus/> </div>
+                      <input type="text" id="ms-form-user" className="form-control" autoFocus /> </div>
                   </div>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
@@ -43,7 +43,7 @@ class Login extends React.Component {
                       </button>
                     </div>
                     <div className="col-md-6">
-                      <Link to="/register" className="btn btn-primary btn-block">
+                      <Link href="/register" className="btn btn-primary btn-block">
                         <i className="zmdi zmdi-account-add mr-1"></i> Sign Up</Link>
                     </div>
                   </div>
@@ -61,9 +61,9 @@ class Login extends React.Component {
             </div>
           </div>
           <div className="text-center animated fadeInUp animation-delay-7">
-            <Link to="/" className="btn btn-white">
+            <Link href="/" className="btn btn-white">
               <i className="zmdi zmdi-home"></i> Go Home</Link>
-            <Link to="/" className="btn btn-white">
+            <Link href="/" className="btn btn-white">
               <i className="zmdi zmdi-key"></i> Recovery Pass</Link>
           </div>
         </div>

@@ -40,19 +40,19 @@ class Slidebar extends Component {
                 <i className="zmdi zmdi-home" /> Home </a>
               <ul id="sc1" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch1" data-parent="#slidebar-menu">
                 <li>
-                  <Link to="/">Default Home</Link>
+                  <Link href="/">Default Home</Link>
                 </li>
                 <li>
-                  <Link to="/coming-soon">E-Learning System</Link>
+                  <Link href="/coming-soon">E-Learning System</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link href="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="/support-center">Support Center</Link>
+                  <Link href="/support-center">Support Center</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </li>

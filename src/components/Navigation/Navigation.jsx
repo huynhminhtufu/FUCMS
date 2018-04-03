@@ -38,7 +38,7 @@ class Navigation extends React.Component {
           <div className="collapse navbar-collapse" id="ms-navbar">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" href="/">
                   Home
                 </Link>
               </li>
@@ -58,34 +58,34 @@ class Navigation extends React.Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li className="dropdown-submenu">
-                    <Link className="dropdown-item" to="/coming-soon">
+                    <Link className="dropdown-item" href="/coming-soon">
                       Web Develop
                     </Link>
                   </li>
                   <li className="dropdown-submenu">
-                    <Link className="dropdown-item" to="/coming-soon">
+                    <Link className="dropdown-item" href="/coming-soon">
                       Android Develop
                     </Link>
                   </li>
                   <li className="dropdown-submenu">
-                    <Link className="dropdown-item" to="/coming-soon">
+                    <Link className="dropdown-item" href="/coming-soon">
                       iOS Develop
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav-link" href="/about">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/support-center">
+                <Link className="nav-link" href="/support-center">
                   Support Center
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <Link className="nav-link" href="/contact">
                   Contact
                 </Link>
               </li>

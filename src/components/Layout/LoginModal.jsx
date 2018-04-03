@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class LoginModal extends Component {
-
   static contextTypes = {
     fetch: PropTypes.func.isRequired,
   };
@@ -19,7 +18,9 @@ class LoginModal extends Component {
                 </span>
               </button>
               <div className="modal-title text-center">
-                <span className="ms-logo ms-logo-white ms-logo-sm mr-1">FU</span>
+                <span className="ms-logo ms-logo-white ms-logo-sm mr-1">
+                  FU
+                </span>
                 <h3 className="no-m ms-site-title">CMS
                   <span>Beta</span>
                 </h3>

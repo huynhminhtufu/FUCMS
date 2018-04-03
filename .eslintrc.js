@@ -105,34 +105,53 @@
 // };
 
 module.exports = {
-  "env": {
-      "amd": true,
-      "node": true,
-      "browser": true,
-      "jquery": true
+  env: {
+    amd: true,
+    node: true,
+    browser: true,
+    jquery: true,
   },
-  "extends": "walmart/configurations/es6-react",
-  "plugins": [
-      "react",
-      "jsx-a11y"
+  extends: [
+    // "walmart/configurations/es6-react",
+    'airbnb',
+    'plugin:flowtype/recommended',
+    'plugin:css-modules/recommended',
+    'prettier',
+    'prettier/flowtype',
+    'prettier/react',
   ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 5
+  plugins: ['flowtype', 'css-modules', 'react', 'jsx-a11y', 'prettier'],
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 5,
   },
-  "rules": {
-      "strict": [
-          2,
-          "global"
-      ],
-      'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
-      "complexity": "off",
-      "no-magic-numbers": 0,
-      "max-statements": "off",
-      "max-len": 0,
-      "max-params": 0,
-      "eol-last": "off",
-      "react/prop-types": [2, { ignore: ['children'] }]
-  }
+  rules: {
+    strict: [2, 'global'],
+    'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
+    // Functional and class components are equivalent from React’s point of view
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
+    'react/prefer-stateless-function': 'off',
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+    'complexity': 'off',
+    'no-magic-numbers': 0,
+    'max-statements': 'off',
+    'max-params': 0,
+    'eol-last': 'off',
+    'react/prop-types': [2, { ignore: ['children'] }],
+    'jsx-a11y/label-has-for': 'off',
+    // 'prettier/prettier': 'error',
+    // "max-len": ["error", {"code": 200, "ignoreUrls": true}],
+    'max-len': 'off',
+    'curly': 'off',
+  },
+  settings: {
+    // Allow absolute paths in imports, e.g. import Button from 'components/Button'
+    // https://github.com/benmosher/eslint-plugin-import/tree/master/resolvers
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
+  },
 };

@@ -35,7 +35,7 @@ class ComingSoon extends React.Component {
                           </span>
                           <h4 className="color-white">Cloud Service</h4>
                           <p className="">Completely based on Cloud Web Service.</p>
-                          <Link to="/" className="btn btn-white color-warning btn-raised">
+                          <Link href="/" className="btn btn-white color-warning btn-raised">
                             <i className="zmdi zmdi-download"></i> Learn More</Link>
                         </div>
                       </div>
@@ -46,7 +46,7 @@ class ComingSoon extends React.Component {
                           </span>
                           <h4 className="color-white">NodeJS Elearning</h4>
                           <p className="">Powered by NodeJS, your system will be ultimate.</p>
-                          <Link to="/" className="btn btn-white color-info btn-raised">
+                          <Link href="/" className="btn btn-white color-info btn-raised">
                             <i className="zmdi zmdi-info"></i> More info</Link>
                         </div>
                       </div>

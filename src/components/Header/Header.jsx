@@ -19,7 +19,7 @@ class Header extends React.Component {
       <header className="ms-header ms-header-primary">
         <div className="container container-full">
           <div className="ms-title">
-            <Link to="/">
+            <Link href="/">
               <span className="ms-logo animated zoomInDown animation-delay-2">
                 FU
               </span>

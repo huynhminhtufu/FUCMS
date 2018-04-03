@@ -24,7 +24,7 @@ class NotFound extends React.Component {
                   We have not found what you are looking for.
                   <br />We have put our robots to search.
                 </p>
-                <Link to="/" className="btn btn-primary btn-raised">
+                <Link href="/" className="btn btn-primary btn-raised">
                   <i className="zmdi zmdi-home" /> Go Home
                 </Link>
               </div>
