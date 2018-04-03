@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class LoginModal extends Component {
+
+  static contextTypes = {
+    fetch: PropTypes.func.isRequired,
+  };
+
   render() {
     return (
       <div className="modal modal-primary" id="ms-account-modal" tabIndex={-1} role="dialog" aria-labelledby="myModalLabel">

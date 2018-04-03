@@ -19,14 +19,14 @@ function action() {
         <div className="ms-hero-page-override ms-hero-img-team ms-hero-bg-primary">
           <div className="container">
             <div className="text-center">
-              <span className="ms-logo ms-logo-lg ms-logo-white center-block mb-2 mt-2 animated zoomInDown animation-delay-5">
+              <span className="ms-logo ms-logo-lg ms-logo-white center-block mb-2 mt-2 animated zoomInDown animation-delay-2">
                 FU
               </span>
-              <h1 className="no-m ms-site-title color-white center-block ms-site-title-lg mt-2 animated zoomInDown animation-delay-5">
+              <h1 className="no-m ms-site-title color-white center-block ms-site-title-lg mt-2 animated zoomInDown animation-delay-2">
                 FUCMS
                 <span> Develop</span> Team
               </h1>
-              <p className="lead lead-lg color-medium text-center center-block mt-2 mw-800 text-uppercase fw-300 animated fadeInUp animation-delay-7">
+              <p className="lead lead-lg color-medium text-center center-block mt-2 mw-800 text-uppercase fw-300 animated fadeInUp animation-delay-3">
                 These are
                 <span className="colorStar"> the professionals</span> who, every
                 day, make progress
@@ -38,7 +38,7 @@ function action() {
         <div className="container">
           <div className="row d-flex justify-content-center card-top">
             <div className="col-lg-4 col-md-6">
-              <div className="card card-warning wow zoomInUp mb-4 animation-delay-5">
+              <div className="card card-warning wow zoomInUp mb-4 animation-delay-1">
                 <div className="withripple zoom-img">
                   <a href="/contact" className="">
                     <img
@@ -94,7 +94,7 @@ function action() {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <div className="card card-royal wow zoomInUp mb-4 animation-delay-7">
+              <div className="card card-royal wow zoomInUp mb-4 animation-delay-3">
                 <div className="withripple zoom-img">
                   <a href="/contact" className="">
                     <img
@@ -150,7 +150,7 @@ function action() {
             </div>
 
             <div className="col-lg-4 col-md-6">
-              <div className="card card-success wow zoomInUp mb-4 animation-delay-9">
+              <div className="card card-success wow zoomInUp mb-4 animation-delay-4">
                 <div className="withripple zoom-img">
                   <a href="/contact" className="">
                     <img
