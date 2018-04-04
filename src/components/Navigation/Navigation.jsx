@@ -91,7 +91,7 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-          <button className="ms-toggle-left btn-navbar-menu visible-xs">
+          <button className="ms-toggle-left btn-navbar-menu d-md-none">
             <i className="zmdi zmdi-menu" />
           </button>
         </div>

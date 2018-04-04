@@ -64,7 +64,6 @@ class Home extends React.Component {
 
   render() {
     // List RSS size
-    const size = 5;
     const { news, feedSize } = this.state;
 
     return (
@@ -119,8 +118,7 @@ class Home extends React.Component {
               ))}
               <div className="text-center">
                 <div className="progress progress-xs">
-                  <div className="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style={{ width: `${this.state.feedSize * 10}%` }}>
-                  </div>
+                  <div className="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style={{ width: `${this.state.feedSize * 10}%` }} />
                 </div>
               </div>
               {this.state.feedSize !== 10 && <div className="text-center"><button className="btn btn-block btn-raised btn-royal" onClick={() => this.handleLoadMore()}>Load more...</button></div>}
@@ -188,7 +186,7 @@ class Home extends React.Component {
               <div className="card card-primary">
                 <div className="card-body p-3 text-center">
                   <h2 className="counter">1234</h2>
-                  <i className="fa fa-4x fa-group primary-color"></i>
+                  <i className="fa fa-4x fa-group primary-color" />
                   <p className="mt-2 no-mb lead small-caps">total visitors</p>
                 </div>
               </div>

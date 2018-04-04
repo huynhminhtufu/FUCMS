@@ -50,7 +50,7 @@ function action() {
                 </div>
                 <div className="card-body">
                   <span className="label label-warning pull-right">
-                    Technical
+                    Backend Developer
                   </span>
                   <h3 className="color-warning">Minh Tran Cong</h3>
                   <p>
@@ -106,7 +106,7 @@ function action() {
                 </div>
                 <div className="card-body">
                   <span className="label label-warning pull-right">
-                    Delivery
+                    Frontend Developer
                   </span>
                   <h3 className="color-warning">Tu Huynh Minh</h3>
                   <p>
@@ -162,9 +162,9 @@ function action() {
                 </div>
                 <div className="card-body">
                   <span className="label label-warning pull-right">
-                    Designer
+                    Database Engineer
                   </span>
-                  <h3 className="color-warning">Thanh Doan Cong</h3>
+                  <h3 className="color-warning">Thanh Doan C.</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur alter adipisicing
                     elit. Facilis, natuse inse voluptates officia repudiandae
