@@ -10,6 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../../components/Link';
+import validate from '../../helpers/validate';
 
 class Register extends React.Component {
   static propTypes = {
@@ -26,16 +27,34 @@ class Register extends React.Component {
 
     this.state = {
       fields: {
-        name: {},
-        username: {},
-        password: {},
-        email: {},
+        name: {
+          validates: {
+            required: true
+          },
+          // maxLength: {}
+        },
+        username: {
+          validates: {
+            required: true
+          },
+        },
+        password: {
+          validates: {
+            required: true
+          },
+        },
+        email: {
+          validates: {
+            required: true
+          },
+        },
       },
     };
   }
 
   shouldComponentUpdate() {
     if (this.needUpdate) {
+      delete this.needUpdate;
       return true;
     }
 
@@ -47,29 +66,20 @@ class Register extends React.Component {
     const element = evt.target;
     const { name, value } = element;
 
-    fields[name] = { name, value };
+    // get field and set field value
+    const field = fields[name];
+    field.value = value;
 
+    // validate and set field, needUpdate
+    const { field: validatedField , needUpdate } = validate(field);
+    fields[name] = validatedField;
+    this.needUpdate = needUpdate;
+
+    // error catch:
+    // field[fieldName].error = element of field.validates
     this.setState({
       fields,
     });
-  }
-
-  onFieldBlur(evt) {
-    const { fields } = this.state;
-    const element = evt.target;
-    const { name, value } = element;
-
-    if (fields[name].value === "" || fields[name].value === null || fields[name].value === undefined) {
-      fields[name] = {name, value, invalid: true}
-      this.setState({
-        fields
-      });
-    } else {
-      fields[name] = {name, value, invalid: false}
-      this.setState({
-        fields
-      });
-    }
   }
 
   async handleSignUp() {
@@ -105,6 +115,8 @@ class Register extends React.Component {
     const { title } = this.props;
     const { fields } = this.state;
 
+    console.log("123");
+
     return (
       <div className="bg-full-page bg-primary back-fixed">
         <div className="mw-500 absolute-center">
@@ -123,15 +135,13 @@ class Register extends React.Component {
                       </label>
                       <input
                         type="text"
-                        value={fields.name.value}
                         id="ms-form-name"
                         className="form-control"
                         name="name"
                         autoFocus
                         onChange={e => this.onFieldChange(e)}
-                        onBlur={e => this.onFieldBlur(e)}
                       />
-                      <p className="form-error">Please enter a valid Full name.</p>
+                      <p className="help-block">{fields.name.error}</p>
                     </div>
                   </div>
                   <div className="form-group label-floating is-empty">

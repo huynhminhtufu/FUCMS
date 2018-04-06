@@ -5,11 +5,3 @@
 button {
   background-color: inherit;
 }
-
-.form-error {
-  color: red;
-  font-size: 12px;
-  display: block;
-  position: absolute;
-  margin-top: 0px;
-}
