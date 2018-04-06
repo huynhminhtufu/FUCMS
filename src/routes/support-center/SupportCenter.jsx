@@ -17,8 +17,8 @@ class SupportCenter extends React.Component {
         <div className="ms-hero-page-override ms-hero-img-city ms-hero-bg-royal">
           <div className="container">
             <div className="text-center">
-              <h1 className="no-m ms-site-title color-white center-block ms-site-title-lg mt-2 animated zoomInDown animation-delay-2">Support Center</h1>
-              <form className="mw-500 center-block animated fadeInUp">
+              <h1 className="no-m ms-site-title color-white center-block ms-site-title-lg mt-2">Support Center</h1>
+              <form className="mw-500 center-block">
                 <div className="form-group is-empty">
                   <input
                     type="text" placeholder="Have a Question?  Ask or enter a search term here."
@@ -26,14 +26,14 @@ class SupportCenter extends React.Component {
                   />
                 </div>
                 <button type="button" className="btn btn-raised btn-primary btn-block">
-                  <i className="zmdi zmdi-search"></i> Search
+                  <i className="zmdi zmdi-search" /> Search
                                 </button>
               </form>
             </div>
           </div>
         </div>
         <div className="container">
-          <div className="card card-hero animated slideInUp animation-delay-4 mb-6">
+          <div className="card card-hero animated slideInUp animation-delay-2 mb-6">
             <div className="card-body">
               <h2 className="right-line right-line-white">Browse by Topic</h2>
               <div className="row">

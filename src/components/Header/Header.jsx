@@ -20,7 +20,7 @@ class Header extends React.Component {
         <div className="container container-full">
           <div className="ms-title">
             <Link href="/">
-              <span className="ms-logo animated zoomInDown animation-delay-2">
+              <span className="ms-logo">
                 FU
               </span>
               <h1>

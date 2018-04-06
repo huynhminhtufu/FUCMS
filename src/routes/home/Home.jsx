@@ -91,7 +91,7 @@ class Home extends React.Component {
             <div className="col-lg-8">
               <h1 className="right-line right-none-white">What's Hot?</h1>
               {news.slice(0, feedSize).map((item, index) => (
-                <article key={item.link} className="card card-primary animated fadeInLeft animation-delay-2">
+                <article key={item.link} className="card card-primary">
                   <div className="card-header">
                     <h3 className="card-title">
                       <a

@@ -54,6 +54,24 @@ class Register extends React.Component {
     });
   }
 
+  onFieldBlur(evt) {
+    const { fields } = this.state;
+    const element = evt.target;
+    const { name, value } = element;
+
+    if (fields[name].value === "" || fields[name].value === null || fields[name].value === undefined) {
+      fields[name] = {name, value, invalid: true}
+      this.setState({
+        fields
+      });
+    } else {
+      fields[name] = {name, value, invalid: false}
+      this.setState({
+        fields
+      });
+    }
+  }
+
   async handleSignUp() {
     const { fields } = this.state;
     const { fetchApi } = this.context;
@@ -85,6 +103,7 @@ class Register extends React.Component {
 
   render() {
     const { title } = this.props;
+    const { fields } = this.state;
 
     return (
       <div className="bg-full-page bg-primary back-fixed">
@@ -104,12 +123,15 @@ class Register extends React.Component {
                       </label>
                       <input
                         type="text"
+                        value={fields.name.value}
                         id="ms-form-name"
                         className="form-control"
                         name="name"
                         autoFocus
                         onChange={e => this.onFieldChange(e)}
+                        onBlur={e => this.onFieldBlur(e)}
                       />
+                      <p className="form-error">Please enter a valid Full name.</p>
                     </div>
                   </div>
                   <div className="form-group label-floating is-empty">
