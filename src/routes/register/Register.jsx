@@ -104,18 +104,18 @@ class Register extends React.Component {
     }`;
 
     const result = await fetchApi({ query });
-    if (result.data.addUser.id) {
+    if (result.data.addUser) {
       // success handle
+      console.log(result.data.addUser);
     } else {
       // fail handle
+      console.log(result.errors);
     }
   }
 
   render() {
     const { title } = this.props;
     const { fields } = this.state;
-
-    console.log("123");
 
     return (
       <div className="bg-full-page bg-primary back-fixed">

@@ -70,4 +70,16 @@ module.exports = {
         'KTZ6cxoKnEakQCeSpZlaUCJWGAlTEBJj0y2EMkUBujA7zWSvaQ',
     },
   },
+  mail: {
+    method: 'smtp',
+    smtp: {
+      host: 'smtp.gmail.com',
+      username: 'kysikhongten',
+      password: 'kgfjbzhrtbqpduym',
+    },
+    gmail: {
+      username: 'kysikhonten',
+      password: 'kgfjbzhrtbqpduym'
+    },
+  },
 };

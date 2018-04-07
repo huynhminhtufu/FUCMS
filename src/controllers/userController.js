@@ -1,5 +1,7 @@
 import { User, UserLogin, UserClaim, UserProfile } from '../data/models';
 import { hashPassword } from '../helpers/password';
+import sendMail from '../helpers/mailer';
+import confirmEmail from '../mailTemplates/confirmEmail';
 
 export const signUp = async data => {
   const hashedResult = await hashPassword({
@@ -32,6 +34,24 @@ export const signUp = async data => {
       ],
     },
   );
+
+  const html = confirmEmail({
+    name: data.name,
+    confirmLink: 'https://fu-cms.herokuapp.com',
+    homeLink: 'https://fu-cms.herokuapp.com',
+    helpLink: 'https://fu-cms.herokuapp.com/contact',
+  });
+
+  const mailOptions = {
+    to: data.email,
+    subject: 'FUCMS - Confirm your registration!',
+    // text: 'That was easy!', // or html
+    html,
+  };
+
+  sendMail(mailOptions, ({error, info}) => {
+    console.log({error, info});
+  });
 
   return user;
 };

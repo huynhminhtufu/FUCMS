@@ -1,12 +1,25 @@
 import nodemailer from 'nodemailer';
+import config from '../config';
 
-export const transporter = nodemailer.createTransport({
+const smtpConfig = {
+  host: config.mail.smtp.host,
+  port: 465,
+  secure: true, // upgrade later with STARTTLS
+  auth: {
+      user: config.mail.smtp.username,
+      pass: config.mail.smtp.password,
+  },
+};
+
+const gmailConfig = {
   service: 'gmail',
   auth: {
-    user: 'youremail@gmail.com',
-    pass: 'yourpassword',
+    user: config.mail.gmail.username,
+    pass: config.mail.gmail.password,
   },
-});
+};
+
+export const transporter = nodemailer.createTransport(smtpConfig);
 
 // const mailOptions = {
 //   from: 'youremail@gmail.com',
@@ -16,6 +29,7 @@ export const transporter = nodemailer.createTransport({
 // };
 
 const sendMail = (mailOptions, onDone) => {
+  mailOptions.from = `"FU Team" <kysikhongten@gmail.com>`;
   transporter.sendMail(mailOptions, (error, info) => {
     if (onDone) onDone({ error, info });
   });
