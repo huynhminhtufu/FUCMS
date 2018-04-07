@@ -76,12 +76,12 @@ class Html extends React.Component {
             rel="stylesheet"
             href="/default/assets/css/style.light-blue-500.min.css"
           />
-          <link
+          {/* <link
             rel="stylesheet"
             href="/default/assets/css/width-boxed.min.css"
             id="ms-boxed"
             disabled="true"
-          />
+          /> */}
           <link rel="stylesheet" href="/default/assets/css/custom.css" />
           {styles.map(style => (
             <style
@@ -107,8 +107,8 @@ class Html extends React.Component {
           <script
             dangerouslySetInnerHTML={{ __html: `window.App=${serialize(app)}` }}
           />
-          {scripts.map(script => <script key={script} src={script} />)}
-          {mainScripts.map(script => <script key={script} src={script} />)}
+          {scripts.map(script => <script key={script} src={script} defer="defer" async="async"/>)}
+          {mainScripts.map(script => <script key={script} src={script}/>)}
           {config.analytics.googleTrackingId && (
             <script
               dangerouslySetInnerHTML={{
