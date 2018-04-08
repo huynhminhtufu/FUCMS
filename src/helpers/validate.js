@@ -7,18 +7,20 @@ const validaters = {
 const validate = (field) => {
 
   const { validates, value } = field;
+
+  if (!validates) {
+    return { field, needUpdate: false};
+  }
+
   const validateKeys = Object.keys(validates);
-  const error = validateKeys.find(validateKey => {
+  const error = validateKeys.find(validateKey => 
     // get validate options
     // const options = validates[validateKey];
-    return !validaters[validateKey](value);
-  });
+     !validaters[validateKey](value)
+  );
 
-  let needUpdate = false;
-  if (error) {
-    needUpdate = field.error !== error;
-    field.error = error;
-  }
+  const needUpdate = field.error !== error;
+  field.error = error;
 
   return { field, needUpdate };
 };
