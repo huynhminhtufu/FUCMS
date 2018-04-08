@@ -24,7 +24,7 @@ class AccountInfo extends React.Component {
     const { profile } = this.props.user;
 
     return (
-      <div className="btn-group">
+      <div className="btn-group animated zoomInDown animation-delay-8">
           <button type="button" className="btn btn btn-primary dropdown-toggle color-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {profile.displayName} <i className="zmdi zmdi-chevron-down right"></i>
           </button>
