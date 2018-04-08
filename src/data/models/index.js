@@ -27,6 +27,12 @@ User.hasMany(UserClaim, {
   onDelete: 'cascade',
 });
 
+UserClaim.belongsTo(User, {
+  as: 'user',
+  onUpdate: 'cascade',
+  onDelete: 'cascade',
+});
+
 User.hasOne(UserProfile, {
   foreignKey: 'userId',
   as: 'profile',

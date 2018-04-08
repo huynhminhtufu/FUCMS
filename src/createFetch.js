@@ -43,6 +43,7 @@ export const createFetch = (
   };
 
   return async (url: string, options: any) => {
+    console.log({ url, options });
     const isGraphQL = url.startsWith('/graphql');
     if (schema && graphql && isGraphQL) {
       // We're SSR, so route the graphql internal to avoid latency
@@ -69,7 +70,14 @@ export const createFetch = (
             ...(options && options.headers),
           },
         })
-      : fetch(url, options);
+      : fetch(url, {
+        ...defaults,
+        ...options,
+        headers: {
+          ...defaults.headers,
+          ...(options && options.headers),
+        },
+      });
   };
 };
 

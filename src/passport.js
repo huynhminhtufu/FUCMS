@@ -15,8 +15,10 @@
 
 import passport from 'passport';
 import { Strategy as FacebookStrategy } from 'passport-facebook';
+import { Strategy as LocalStrategy } from 'passport-local';
 import { User, UserLogin, UserClaim, UserProfile } from './data/models';
 import config from './config';
+import { hashPassword } from './helpers/password';
 
 /**
  * Sign in with Facebook.
@@ -139,5 +141,93 @@ passport.use(
     },
   ),
 );
+
+/**
+ * Sign in with email and password
+ */
+
+passport.use('local', new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password'
+},
+async function(email, password, done) {
+  // const user = await User.findAll({
+  //   attributes: ['id'],
+  //   where: { email },
+  //   include: [
+  //     {
+  //       attributes: ['type', 'value'],
+  //       model: UserClaim,
+  //       as: 'claims',
+  //       required: true,
+  //       where: {
+  //         type: ['password', 'salt']
+  //       },
+  //     },
+  //   ],
+  // });
+
+  const claims = await UserClaim.findAll({
+    attributes: ['type', 'value'],
+    where: {
+      type: ['password', 'salt']
+    },
+    include: [
+      {
+        model: User,
+        attributes: ['id'],
+        as: 'user',
+        required: true,
+        where: { email },
+      },
+    ],
+  });
+
+  if (!claims) {
+    done(null, false, { message: 'User not found!' });
+    return;
+  }
+
+  const passwordInfo = {salt: '', password: ''};
+  let userId = 0;
+  claims.forEach(claim => {
+    passwordInfo[claim.type] = claim.value;
+    userId = claim.user.id;
+  });
+
+  if (!passwordInfo.password || !passwordInfo.salt) {
+    done(null, false, { message: 'User info was missed, please contact the administrator' });
+    return;
+  }
+
+  const { hashedPassword } = await hashPassword({password, salt: passwordInfo.salt});
+  console.log({hashedPassword, passwordInfo})
+  if (hashedPassword !== passwordInfo.password) {
+    done(null, false, { message: 'Incorrect password' });
+    return;
+  }
+
+  done(null, {
+    id: userId,
+    email,
+  });
+}
+));
+
+/**
+ * serializeUser
+ */
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+/**
+ * deserializeUser
+ */
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 export default passport;
