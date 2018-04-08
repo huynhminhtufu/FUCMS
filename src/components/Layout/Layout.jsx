@@ -17,7 +17,7 @@ import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
 import Navigation from '../Navigation';
-import LoginModal from './LoginModal';
+import LoginModal from '../LoginModal';
 import SlideBar from './SlideBar';
 
 class Layout extends React.Component {

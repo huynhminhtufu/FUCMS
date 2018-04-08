@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import history from '../../history';
+import LoginForm from './LoginForm';
 
 class LoginModal extends Component {
   static contextTypes = {
     fetch: PropTypes.func.isRequired,
   };
+
+  onLoginSuccess() {
+    history.push('/about');
+  }
+
+  login() {
+    
+  }
 
   render() {
     return (
@@ -45,39 +55,7 @@ class LoginModal extends Component {
             <div className="modal-body">
               <div className="tab-content">
                 <div role="tabpanel" className="tab-pane fade active show" id="ms-login-tab">
-                  <form autoComplete="off" action="/login">
-                    <fieldset>
-                      <div className="form-group label-floating">
-                        <div className="input-group">
-                          <span className="input-group-addon">
-                            <i className="zmdi zmdi-account" />
-                          </span>
-                          <label className="control-label" htmlFor="ms-form-user">Username</label>
-                          <input type="text" id="ms-form-user" className="form-control" /> </div>
-                      </div>
-                      <div className="form-group label-floating">
-                        <div className="input-group">
-                          <span className="input-group-addon">
-                            <i className="zmdi zmdi-lock" />
-                          </span>
-                          <label className="control-label" htmlFor="ms-form-pass">Password</label>
-                          <input type="password" id="ms-form-pass" className="form-control" /> </div>
-                      </div>
-                      <div className="row mt-2">
-                        <div className="col-md-6">
-                          <div className="form-group no-mt">
-                            <div className="checkbox">
-                              <label>
-                                <input type="checkbox" /> Remember Me </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <button className="btn btn-raised btn-primary pull-right">Login</button>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </form>
+                  <LoginForm />
                   <div className="text-center">
                     <h3>Login with</h3>
                     <button className="wave-effect-light btn btn-raised btn-facebook">
