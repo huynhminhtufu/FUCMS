@@ -297,3 +297,8 @@
 button {
   background-color: inherit;
 }
+
+.help-block {
+  display: block !important;
+  color: #ff0000;
+}
