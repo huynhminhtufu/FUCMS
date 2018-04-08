@@ -82,7 +82,7 @@ const template = ({name, confirmLink, homeLink, helpLink}) => `
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
                         <a href="${homeLink}" target="_blank">
-                            <img alt="Logo" src="https://lh3.googleusercontent.com/rBEdVmebqS_VWCDppM-DWmVaLV-9MW_28ltMLb2LpW16ibIxBNXT-eY8VZaOIhUPyBwjuBdIEnuaNsYWb6OJ=w1920-h935" width="40" height="40" style="display: block; width: 40px; max-width: 40px; min-width: 40px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
+                            <img alt="Logo" src="http://imageshack.com/a/img924/5266/mrg38Q.png" style="display: block; width: 400px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
                         </a>
                     </td>
                 </tr>

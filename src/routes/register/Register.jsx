@@ -9,12 +9,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { success, error } from 'react-notification-system-redux';
 import Link from '../../components/Link';
 import validate from '../../helpers/validate';
+import history from '../../history';
 
 class Register extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    dispatch: PropTypes.func,
   };
 
   static contextTypes = {
@@ -71,7 +75,7 @@ class Register extends React.Component {
     field.value = value;
 
     // validate and set field, needUpdate
-    const { field: validatedField , needUpdate } = validate(field);
+    const { field: validatedField, needUpdate } = validate(field);
     fields[name] = validatedField;
     this.needUpdate = needUpdate;
 
@@ -83,6 +87,8 @@ class Register extends React.Component {
   }
 
   async handleSignUp() {
+    const { dispatch } = this.props;
+
     const { fields } = this.state;
     const { fetchApi } = this.context;
     const data = {};
@@ -106,16 +112,30 @@ class Register extends React.Component {
     const result = await fetchApi({ query });
     if (result.data.addUser) {
       // success handle
-      console.log(result.data.addUser);
+      dispatch(
+        success({
+          title: 'Sign up successfully!',
+          message: `Please do email confirmation at ${result.data.addUser.email}.`,
+          position: 'tc',
+          autoDismiss: 5,
+        })
+      );
+      history.push("/");
     } else {
       // fail handle
-      console.log(result.errors);
+      dispatch(
+        error({
+          title: 'Error!',
+          message: `Please enter below fields to sign up.`,
+          position: 'tc',
+          autoDismiss: 0,
+        })
+      );
     }
   }
 
   render() {
     const { title } = this.props;
-    const { fields } = this.state;
 
     return (
       <div className="bg-full-page bg-primary back-fixed">
@@ -141,7 +161,6 @@ class Register extends React.Component {
                         autoFocus
                         onChange={e => this.onFieldChange(e)}
                       />
-                      <p className="help-block">{fields.name.error}</p>
                     </div>
                   </div>
                   <div className="form-group label-floating is-empty">
@@ -195,7 +214,7 @@ class Register extends React.Component {
                       />
                     </div>
                   </div>
-                  <div className="row ">
+                  <div className="row mt-2">
                     <div className="col-md-6">
                       <button
                         onClick={e => {
@@ -253,4 +272,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default connect()(Register);
