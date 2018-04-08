@@ -1,8 +1,10 @@
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_RECEIVE = 'LOGIN_RECEIVE';
 
-export const loginRequest = {
-  type: LOGIN_REQUEST
+export const loginRequest = () => {
+  return {
+    type: LOGIN_REQUEST
+  };
 };
 
 export const loginReceive = (user) => ({
@@ -12,10 +14,16 @@ export const loginReceive = (user) => ({
 
 export const login = (data) => {
   return async (dispatch, getState, helper) => {
+    dispatch(loginRequest());
+
     const result = await helper.fetch('/api/login', {
       body: JSON.stringify(data),
     });
 
-    console.log({result});
+    const user = await result.json();
+
+    dispatch(loginReceive(user || {}));
+
+    return user;
   };
 };

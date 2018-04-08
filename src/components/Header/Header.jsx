@@ -12,6 +12,7 @@ import React from 'react';
 // import s from './Header.css';
 import Link from '../Link';
 // import Navigation from '../Navigation';
+import AccountInfo from './AccountInfo';
 
 class Header extends React.Component {
   render() {
@@ -56,13 +57,7 @@ class Header extends React.Component {
                 <i className="zmdi zmdi-share" />
               </button>
             </div>
-            <button
-              className="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8"
-              data-toggle="modal"
-              data-target="#ms-account-modal"
-            >
-              <i className="zmdi zmdi-account" />
-            </button>
+            <AccountInfo />
             <form className="search-form animated zoomInDown animation-delay-9">
               <input
                 id="search-box"

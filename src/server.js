@@ -87,8 +87,15 @@ app.use(passport.initialize());
 
 app.get('/logout', function(req, res){
   req.logout();
+  res.clearCookie('id_token');
   res.redirect('/');
 });
+
+// app.post('/logout', function(req, res){
+//   req.logout();
+//   res.cookie('id_token', null);
+//   res.send({ isSuccess: true });
+// });
 
 app.get(
   '/login/facebook',
@@ -122,6 +129,10 @@ app.post(
     const token = jwt.sign(req.user, config.auth.jwt.secret, { expiresIn });
     res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: true });
     res.send(req.user);
+    console.log({
+      user: req.user,
+      body: req.body,
+    });
   }
 );
 
@@ -142,7 +153,15 @@ app.use(
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 app.get('*', async (req, res, next) => {
+  
   try {
+    // if (req.user) {
+    //   console.log({
+    //     user: req.user,
+    //     body: req.body,
+    //   });
+    // }
+
     const css = new Set();
 
     // Enables critical path CSS rendering

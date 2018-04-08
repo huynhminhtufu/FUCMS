@@ -147,7 +147,7 @@ passport.use(
  */
 
 passport.use('local', new LocalStrategy({
-  usernameField: 'email',
+  usernameField: 'username',
   passwordField: 'password'
 },
 async function(email, password, done) {
@@ -167,6 +167,7 @@ async function(email, password, done) {
   //   ],
   // });
 
+  // get claims info
   const claims = await UserClaim.findAll({
     attributes: ['type', 'value'],
     where: {
@@ -188,6 +189,7 @@ async function(email, password, done) {
     return;
   }
 
+  // get password and salt from info
   const passwordInfo = {salt: '', password: ''};
   let userId = 0;
   claims.forEach(claim => {
@@ -200,16 +202,29 @@ async function(email, password, done) {
     return;
   }
 
+  // hash and check password
   const { hashedPassword } = await hashPassword({password, salt: passwordInfo.salt});
-  console.log({hashedPassword, passwordInfo})
+
   if (hashedPassword !== passwordInfo.password) {
     done(null, false, { message: 'Incorrect password' });
     return;
   }
 
+  // success, get user info
+  const userInfo = await User.findOne({
+    attributes: ['id', 'email', 'emailConfirmed'],
+    where: {id: userId},
+    include: [
+      { model: UserProfile, as: 'profile' },
+    ],
+  });
+
+  // return user
   done(null, {
     id: userId,
-    email,
+    email: userInfo.email,
+    emailConfirmed: userInfo.emailConfirmed,
+    profile: {...userInfo.profile.dataValues},
   });
 }
 ));

@@ -302,3 +302,7 @@ button {
   display: block !important;
   color: #ff0000;
 }
+
+.ms-header {
+  z-index: 1171;
+}

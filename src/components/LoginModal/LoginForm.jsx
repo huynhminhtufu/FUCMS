@@ -29,21 +29,26 @@ class LoginForm extends Form {
     };
   }
 
-  onSubmit(e) {
+  async onSubmit(e) {
     e && e.preventDefault();
 
     const { login } = this.props;
+    const { fields } = this.state;
 
-    console.log(this.state.fields);
-
-    login({
-
+    const data = {};
+    Object.keys(fields).forEach(key => {
+      data[key] = fields[key].value;
     });
+
+    const user = await login(data);
+
+    if (user.id) {
+      $('#ms-account-modal').modal('hide');
+    }
   }
 
   render() {
     const { fields } = this.state;
-    console.log({ fields });
 
     return (
       <form autoComplete="off" action="/login"
