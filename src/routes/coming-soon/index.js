@@ -8,12 +8,22 @@
  */
 
 import React from 'react';
+import Layout from '../../components/Layout';
 import ComingSoon from './ComingSoon';
 
 function action() {
   return {
     title: 'Comming Soon!',
-    component: <ComingSoon />,
+    component: (
+      <Layout
+        options={{
+          isShowHeader: false,
+          isShowNavbar: false,
+          isShowFooter: false,
+        }}
+      >
+        <ComingSoon />
+      </Layout> ),
   };
 }
 

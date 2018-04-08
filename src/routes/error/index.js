@@ -8,12 +8,21 @@
  */
 
 import React from 'react';
+import Layout from '../../components/Layout';
 import ErrorPage from './ErrorPage';
 
 function action() {
   return {
-    title: 'Demo Error',
-    component: <ErrorPage />,
+    title: 'Error',
+    component: (
+      <Layout
+        options={{
+          isShowHeader: false,
+          isShowNavbar: false,
+          isShowFooter: false,
+        }}
+      ><ErrorPage />
+      </Layout>),
   };
 }
 
