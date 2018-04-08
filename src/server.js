@@ -129,10 +129,6 @@ app.post(
     const token = jwt.sign(req.user, config.auth.jwt.secret, { expiresIn });
     res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: true });
     res.send(req.user);
-    console.log({
-      user: req.user,
-      body: req.body,
-    });
   }
 );
 
