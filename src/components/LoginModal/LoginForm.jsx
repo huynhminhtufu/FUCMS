@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Form from '../Form';
@@ -43,7 +43,6 @@ class LoginForm extends Form {
 
   render() {
     const { fields } = this.state;
-    console.log({ fields });
 
     return (
       <form autoComplete="off" action="/login"
