@@ -85,17 +85,11 @@ app.use((err, req, res, next) => {
 
 app.use(passport.initialize());
 
-app.get('/logout', function(req, res){
+app.get('/logout', (req, res) => {
   req.logout();
   res.clearCookie('id_token');
   res.redirect('/');
 });
-
-// app.post('/logout', function(req, res){
-//   req.logout();
-//   res.cookie('id_token', null);
-//   res.send({ isSuccess: true });
-// });
 
 app.get(
   '/login/facebook',
@@ -125,6 +119,7 @@ app.post(
     failureRedirect: '/login',
   }),
   (req, res) => {
+    // remeber login check is missing!
     const expiresIn = 60 * 60 * 24 * 180; // 180 days
     const token = jwt.sign(req.user, config.auth.jwt.secret, { expiresIn });
     res.cookie('id_token', token, { maxAge: 1000 * expiresIn, httpOnly: true });

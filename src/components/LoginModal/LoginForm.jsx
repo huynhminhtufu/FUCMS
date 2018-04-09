@@ -32,6 +32,11 @@ class LoginForm extends Form {
   async onSubmit(e) {
     e && e.preventDefault();
 
+    // call validateForm of Form component
+    if (!this.validateForm()) {
+      return;
+    }
+
     const { login } = this.props;
     const { fields } = this.state;
 

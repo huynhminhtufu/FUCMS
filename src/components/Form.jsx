@@ -40,6 +40,31 @@ class FormValidate extends Component {
       fields,
     });
   }
+
+  validateForm() {
+    const { fields } = this.state;
+    const fieldNames = Object.keys(fields);
+    let isValid = true;
+
+    fieldNames.forEach(fieldName => {
+      const field = fields[fieldName];
+      const { field: validatedField , needUpdate } = validate(field);
+      if (validatedField.error) {
+        isValid = false;
+      }
+
+      fields[fieldName] = field;
+      if (needUpdate) {
+        this.needUpdate = needUpdate;
+      }
+    });
+
+    this.setState({
+      fields,
+    });
+
+    return isValid;
+  }
 }
 
 export default FormValidate;

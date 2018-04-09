@@ -150,82 +150,69 @@ passport.use('local', new LocalStrategy({
   usernameField: 'username',
   passwordField: 'password'
 },
-async function(email, password, done) {
-  // const user = await User.findAll({
-  //   attributes: ['id'],
-  //   where: { email },
-  //   include: [
-  //     {
-  //       attributes: ['type', 'value'],
-  //       model: UserClaim,
-  //       as: 'claims',
-  //       required: true,
-  //       where: {
-  //         type: ['password', 'salt']
-  //       },
-  //     },
-  //   ],
-  // });
-
-  // get claims info
-  const claims = await UserClaim.findAll({
-    attributes: ['type', 'value'],
-    where: {
-      type: ['password', 'salt']
-    },
-    include: [
-      {
-        model: User,
-        attributes: ['id'],
-        as: 'user',
-        required: true,
-        where: { email },
+async (email, password, done) => {
+  try {
+    const claims = await UserClaim.findAll({
+      attributes: ['type', 'value'],
+      where: {
+        type: ['password', 'salt']
       },
-    ],
-  });
-
-  if (!claims) {
-    done(null, false, { message: 'User not found!' });
-    return;
+      include: [
+        {
+          model: User,
+          attributes: ['id'],
+          as: 'user',
+          required: true,
+          where: { email },
+        },
+      ],
+    });
+  
+    if (!claims) {
+      done(null, false, { message: 'User not found!' });
+      return;
+    }
+  
+    // get password and salt from info
+    const passwordInfo = {salt: '', password: ''};
+    let userId = 0;
+    claims.forEach(claim => {
+      passwordInfo[claim.type] = claim.value;
+      userId = claim.user.id;
+    });
+  
+    if (!passwordInfo.password || !passwordInfo.salt) {
+      done(null, false, { message: 'User info was missed, please contact the administrator' });
+      return;
+    }
+  
+    // hash and check password
+    const { hashedPassword } = await hashPassword({password, salt: passwordInfo.salt});
+  
+    if (hashedPassword !== passwordInfo.password) {
+      done(null, false, { message: 'Incorrect password' });
+      return;
+    }
+  
+    // success, get user info
+    const userInfo = await User.findOne({
+      attributes: ['id', 'email', 'emailConfirmed'],
+      where: {id: userId},
+      include: [
+        { model: UserProfile, as: 'profile' },
+      ],
+    });
+  
+    // return user
+    done(null, {
+      id: userId,
+      email: userInfo.email,
+      emailConfirmed: userInfo.emailConfirmed,
+      profile: {...userInfo.profile.dataValues},
+    });
+  } catch (error) {
+    done(null, false, {message: 'Something went wrong, please try again!'});
   }
-
-  // get password and salt from info
-  const passwordInfo = {salt: '', password: ''};
-  let userId = 0;
-  claims.forEach(claim => {
-    passwordInfo[claim.type] = claim.value;
-    userId = claim.user.id;
-  });
-
-  if (!passwordInfo.password || !passwordInfo.salt) {
-    done(null, false, { message: 'User info was missed, please contact the administrator' });
-    return;
-  }
-
-  // hash and check password
-  const { hashedPassword } = await hashPassword({password, salt: passwordInfo.salt});
-
-  if (hashedPassword !== passwordInfo.password) {
-    done(null, false, { message: 'Incorrect password' });
-    return;
-  }
-
-  // success, get user info
-  const userInfo = await User.findOne({
-    attributes: ['id', 'email', 'emailConfirmed'],
-    where: {id: userId},
-    include: [
-      { model: UserProfile, as: 'profile' },
-    ],
-  });
-
-  // return user
-  done(null, {
-    id: userId,
-    email: userInfo.email,
-    emailConfirmed: userInfo.emailConfirmed,
-    profile: {...userInfo.profile.dataValues},
-  });
 }
 ));
 
@@ -233,7 +220,7 @@ async function(email, password, done) {
  * serializeUser
  */
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser((user, done) => {
   done(null, user);
 });
 
@@ -241,7 +228,7 @@ passport.serializeUser(function(user, done) {
  * deserializeUser
  */
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
