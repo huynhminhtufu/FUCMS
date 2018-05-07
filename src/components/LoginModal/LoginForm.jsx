@@ -58,6 +58,7 @@ class LoginForm extends Form {
     return (
       <form autoComplete="off" action="/login"
         onSubmit={e => this.onSubmit(e)}
+        noValidate
       >
         <fieldset>
           <div className={`form-group label-floating ${fields.username.error ? 'has-error is-focused' : ''}`}>
@@ -65,11 +66,12 @@ class LoginForm extends Form {
               <span className="input-group-addon">
                 <i className="zmdi zmdi-account" />
               </span>
-              <label className="control-label" htmlFor="ms-form-user">Username</label>
               <input type="text" id="ms-form-user" className="form-control"
                 name="username"
                 onChange={e => this.onFieldChange(e)}
+                required
               />
+              <label className="control-label" htmlFor="ms-form-user">Username</label>
               <p className="help-block">{fields.username.error}</p>
             </div>
           </div>
@@ -78,11 +80,12 @@ class LoginForm extends Form {
               <span className="input-group-addon">
                 <i className="zmdi zmdi-lock" />
               </span>
-              <label className="control-label" htmlFor="ms-form-pass">Password</label>
               <input type="password" id="ms-form-pass" className="form-control"
                 name="password"
                 onChange={e => this.onFieldChange(e)}
+                required
               />
+              <label className="control-label" htmlFor="ms-form-pass">Password</label>
               <p className="help-block">{fields.password.error}</p>
             </div>
           </div>
@@ -108,9 +111,7 @@ class LoginForm extends Form {
   }
 }
 
-const mapStateToProps = state => {
-  return state;
-};
+const mapStateToProps = state => state;
 
 const mapDispatch = {
   login,

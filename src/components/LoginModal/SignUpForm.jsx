@@ -15,39 +15,43 @@ class SignUpForm extends Form {
 
     render() {
         return (
-            <form action="/register">
+            <form action="/register" noValidate>
                 <fieldset>
                     <div className="form-group label-floating">
                         <div className="input-group">
                             <span className="input-group-addon">
                                 <i className="zmdi zmdi-account" />
                             </span>
+                            <input type="text" id="ms-form-user-r" className="form-control" required/>
                             <label className="control-label" htmlFor="ms-form-user-r">Username</label>
-                            <input type="text" id="ms-form-user-r" className="form-control" /> </div>
+                        </div>
                     </div>
                     <div className="form-group label-floating">
                         <div className="input-group">
                             <span className="input-group-addon">
                                 <i className="zmdi zmdi-email" />
                             </span>
+                            <input type="text" id="ms-form-email-r" className="form-control" required/>
                             <label className="control-label" htmlFor="ms-form-email-r">Email</label>
-                            <input type="email" id="ms-form-email-r" className="form-control" /> </div>
+                        </div>
                     </div>
                     <div className="form-group label-floating">
                         <div className="input-group">
                             <span className="input-group-addon">
                                 <i className="zmdi zmdi-lock" />
                             </span>
+                            <input type="password" id="ms-form-pass-r" className="form-control" required/>
                             <label className="control-label" htmlFor="ms-form-pass-r">Password</label>
-                            <input type="password" id="ms-form-pass-r" className="form-control" /> </div>
+                        </div>
                     </div>
                     <div className="form-group label-floating">
                         <div className="input-group">
                             <span className="input-group-addon">
                                 <i className="zmdi zmdi-lock" />
                             </span>
+                            <input type="password" id="ms-form-pass-rn" className="form-control" required/>
                             <label className="control-label" htmlFor="ms-form-pass-rn">Re-type Password</label>
-                            <input type="password" id="ms-form-pass-rn" className="form-control" /> </div>
+                        </div>
                     </div>
                     <button className="btn btn-raised btn-block btn-primary">Sign Up Now</button>
                 </fieldset>
@@ -56,9 +60,7 @@ class SignUpForm extends Form {
     }
 }
 
-const mapStateToProps = state => {
-    return state;
-};
+const mapStateToProps = state => state;
 
 const mapDispatch = {
     //

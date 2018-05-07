@@ -143,24 +143,25 @@ class Register extends React.Component {
           <div className="card color-dark animated zoomInDown animation-delay-5">
             <div className="card-body">
               <h1 className="color-primary">{title}</h1>
-              <form onSubmit={e => this.onFieldChange(e)}>
+              <form onSubmit={e => this.onFieldChange(e)} noValidate>
                 <fieldset>
                   <div className="form-group label-floating is-empty">
                     <div className="input-group">
                       <span className="input-group-addon">
                         <i className="zmdi zmdi-card" />
                       </span>
-                      <label className="control-label" htmlFor="ms-form-name">
-                        Full name
-                      </label>
                       <input
                         type="text"
                         id="ms-form-name"
                         className="form-control"
                         name="name"
                         autoFocus
+                        required
                         onChange={e => this.onFieldChange(e)}
                       />
+                      <label className="control-label" htmlFor="ms-form-name">
+                        Full name
+                      </label>
                     </div>
                   </div>
                   <div className="form-group label-floating is-empty">

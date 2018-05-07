@@ -27,16 +27,46 @@ class Html extends React.Component {
     scripts: PropTypes.arrayOf(PropTypes.string.isRequired),
     app: PropTypes.object, // eslint-disable-line
     children: PropTypes.string.isRequired,
-    mainScripts: PropTypes.arrayOf(PropTypes.string),
+    clientStyles: PropTypes.arrayOf(PropTypes.string),
+    clientScripts: PropTypes.arrayOf(PropTypes.string),
+    path: PropTypes.string,
+    adminStyles: PropTypes.arrayOf(PropTypes.string),
+    adminScripts: PropTypes.arrayOf(PropTypes.string),
   };
 
   static defaultProps = {
     styles: [],
     scripts: [],
-    mainScripts: [
+    clientStyles: [
+      'https://fonts.googleapis.com/icon?family=Material+Icons',
+      '/default/assets/css/plugins.min.css',
+      '/default/assets/css/preload.min.css',
+      '/default/assets/css/style.light-blue-500.min.css',
+      '/default/assets/css/custom.css',
+    ],
+    clientScripts: [
       '/default/assets/js/plugins.min.js',
       '/default/assets/js/app.min.js',
       '/default/assets/js/configurator.min.js',
+    ],
+    adminStyles: [
+      '/admin/assets/bootstrap/dist/css/bootstrap.min.css',
+      '/admin/assets/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css',
+      '/admin/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css',
+      '/admin/assets/css/animate.css',
+      '/admin/assets/css/style.css',
+      '/admin/assets/css/colors/blue.css',
+    ],
+    adminScripts: [
+      '/admin/assets/plugins/bower_components/jquery/dist/jquery.min.js',
+      '/admin/assets/bootstrap/dist/js/tether.min.js',
+      '/admin/assets/bootstrap/dist/js/bootstrap.min.js',
+      '/admin/assets/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js',
+      '/admin/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js',
+      '/admin/assets/js/jquery.slimscroll.js',
+      '/admin/assets/js/waves.js',
+      '/admin/assets/js/custom.min.js',
+      '/admin/assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js',
     ],
   };
 
@@ -48,8 +78,17 @@ class Html extends React.Component {
       scripts,
       app,
       children,
-      mainScripts,
+      clientStyles,
+      clientScripts,
+      path,
+      adminStyles,
+      adminScripts,
     } = this.props;
+
+    const isAdmin = path && path.indexOf(config.admin.path) === 0;
+    const mainStyles = isAdmin ? adminStyles : clientStyles;
+    const mainScripts = isAdmin ? adminScripts : clientScripts;
+
     return (
       <html className="no-js" lang="en">
         <head>
@@ -66,23 +105,21 @@ class Html extends React.Component {
           ))}
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="apple-touch-icon" href="/icon.png" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-          <link rel="stylesheet" href="/default/assets/css/preload.min.css" />
-          <link rel="stylesheet" href="/default/assets/css/plugins.min.css" />
-          <link
-            rel="stylesheet"
-            href="/default/assets/css/style.light-blue-500.min.css"
-          />
           {/* <link
             rel="stylesheet"
             href="/default/assets/css/width-boxed.min.css"
             id="ms-boxed"
             disabled="true"
           /> */}
-          <link rel="stylesheet" href="/default/assets/css/custom.css" />
+
+          {mainStyles.map((style, index) => (
+            <link
+              key={index}
+              rel="stylesheet"
+              href={style}
+            />
+          ))}
+
           {styles.map(style => (
             <style
               key={style.id}

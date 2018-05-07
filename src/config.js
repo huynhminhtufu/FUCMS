@@ -32,6 +32,11 @@ module.exports = {
       `http://localhost:${process.env.PORT || 3000}`,
   },
 
+  // admin
+  admin: {
+    path: '/admin'
+  },
+
   // Database
   databaseUrl:
     process.env.DATABASE_URL ||

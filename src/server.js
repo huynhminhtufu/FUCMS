@@ -231,6 +231,9 @@ app.get('*', async (req, res, next) => {
     if (route.chunks) route.chunks.forEach(addChunk);
 
     data.scripts = Array.from(scripts);
+
+    data.path = req.path;
+
     data.app = {
       apiUrl: config.api.clientUrl,
       state: context.store.getState(),
