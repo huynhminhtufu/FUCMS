@@ -65,7 +65,7 @@ class Html extends React.Component {
       '/admin/assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js',
       '/admin/assets/js/jquery.slimscroll.js',
       '/admin/assets/js/waves.js',
-      '/admin/assets/js/custom.min.js',
+      '/admin/assets/js/custom.js',
       '/admin/assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js',
     ],
   };
@@ -129,6 +129,14 @@ class Html extends React.Component {
           ))}
         </head>
         <body>
+
+          { isAdmin &&
+          <div class="preloader">
+              <div class="cssload-speeding-wheel"></div>
+          </div>  
+          }
+
+          { !isAdmin &&
           <div id="ms-preload" className="ms-preload">
             <div id="status">
               <div className="spinner">
@@ -137,6 +145,7 @@ class Html extends React.Component {
               </div>
             </div>
           </div>
+          }
           <div
             id="app"
             dangerouslySetInnerHTML={{ __html: children }}

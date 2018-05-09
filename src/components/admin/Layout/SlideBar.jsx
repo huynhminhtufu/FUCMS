@@ -1,210 +1,270 @@
 import React, { Component } from 'react';
-import Link from '../Link';
+import Link from '../../Link';
 
 class Slidebar extends Component {
   componentDidMount() {
-    if (window.slidebar) {
-      window.slidebar();
-    }
+    $("#side-menu").metisMenu();
   }
 
   render() {
     return (
-      <div className="ms-slidebar sb-slidebar sb-left sb-style-overlay" id="ms-slidebar">
-        <div className="sb-slidebar-container">
-          <header className="ms-slidebar-header">
-            <div className="ms-slidebar-login">
-              <a href="#" className="withripple ms-toggle-left" data-toggle="modal" data-target="#ms-account-modal">
-                <i className="zmdi zmdi-account" /> Login</a>
-              <a href="#" className="withripple ms-toggle-left" data-toggle="modal" data-target="#ms-account-modal">
-                <i className="zmdi zmdi-account-add" /> Register</a>
-            </div>
-            <div className="ms-slidebar-title">
-              <form className="search-form">
-                <input id="search-box-slidebar" type="text" className="search-input" placeholder="Search..." name="q" />
-                <label htmlFor="search-box-slidebar">
-                  <i className="zmdi zmdi-search" />
-                </label>
-              </form>
-              <div className="ms-slidebar-t">
-                <span className="ms-logo ms-logo-sm">FU</span>
-                <h3>CMS
-                    <span>Beta</span>
-                </h3>
-              </div>
-            </div>
-          </header>
-          <ul className="ms-slidebar-menu" id="slidebar-menu" role="tablist" aria-multiselectable="true">
-            <li className="card" role="tab" id="sch1">
-              <a className="collapsed" role="button" data-toggle="collapse" href="#sc1" aria-expanded="false" aria-controls="sc1">
-                <i className="zmdi zmdi-home" /> Home </a>
-              <ul id="sc1" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch1" data-parent="#slidebar-menu">
-                <li>
-                  <Link href="/">Default Home</Link>
-                </li>
-                <li>
-                  <Link href="/coming-soon">E-Learning System</Link>
-                </li>
-                <li>
-                  <Link href="/about">About</Link>
-                </li>
-                <li>
-                  <Link href="/support-center">Support Center</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
-                </li>
+      <div className="navbar-default sidebar" role="navigation">
+        <div className="sidebar-nav navbar-collapse slimscrollsidebar">
+          <ul className="nav" id="side-menu">
+            <li className="sidebar-search hidden-sm hidden-md hidden-lg">
+
+              <div className="input-group custom-search-form">
+                <input type="text" className="form-control" placeholder="Search..." /> <span className="input-group-btn">
+                  <button className="btn btn-default" type="button"> <i className="fa fa-search" /> </button>
+                </span> </div>
+
+            </li>
+            <li className="user-pro">
+              <a href="#" className="waves-effect"><img src="/tile.png" alt="user-img" className="img-circle" /> <span className="hide-menu">Prof. Steve Gection
+                <span className="fa arrow" /></span>
+              </a>
+              <ul className="nav nav-second-level">
+                <li><a href="javascript:void(0)"><i className="ti-user" /> My Profile</a></li>
+                <li><a href="javascript:void(0)"><i className="ti-email" /> Inbox</a></li>
+                <li><a href="javascript:void(0)"><i className="ti-settings" /> Account Setting</a></li>
+                <li><a href="login.html"><i className="fa fa-power-off" /> Logout</a></li>
               </ul>
             </li>
-            <li className="card" role="tab" id="sch2">
-              <a className="collapsed" role="button" data-toggle="collapse" href="#sc2" aria-expanded="false" aria-controls="sc2">
-                <i className="zmdi zmdi-desktop-mac" /> Pages </a>
-              <ul id="sc2" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch2" data-parent="#slidebar-menu">
-                <li>
-                  <a href="/">About US</a>
-                </li>
-                <li>
-                  <a href="/">Our Team</a>
-                </li>
-                <li>
-                  <a href="/">Products</a>
-                </li>
-                <li>
-                  <a href="/">Services</a>
-                </li>
-                <li>
-                  <a href="/">FAQ</a>
-                </li>
-                <li>
-                  <a href="/">Timeline</a>
-                </li>
-                <li>
-                  <a href="/">Contact Option</a>
-                </li>
-                <li>
-                  <a href="/">Login</a>
-                </li>
-                <li>
-                  <a href="/">Pricing</a>
-                </li>
-                <li>
-                  <a href="/">Coming Soon</a>
-                </li>
-              </ul>
-            </li>
-            <li className="card" role="tab" id="sch4">
-              <a className="collapsed" role="button" data-toggle="collapse" href="#sc4" aria-expanded="false" aria-controls="sc4">
-                <i className="zmdi zmdi-edit" /> Blog </a>
-              <ul id="sc4" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch4" data-parent="#slidebar-menu">
-                <li>
-                  <a href="/">Blog Sidebar 1</a>
-                </li>
-                <li>
-                  <a href="/">Blog Sidebar 2</a>
-                </li>
-                <li>
-                  <a href="/">Blog Masonry 1</a>
-                </li>
-                <li>
-                  <a href="/">Blog Masonry 2</a>
-                </li>
-                <li>
-                  <a href="/">Blog Full Page 1</a>
-                </li>
-                <li>
-                  <a href="/">Blog Full Page 2</a>
-                </li>
-                <li>
-                  <a href="/">Blog Post 1</a>
-                </li>
-                <li>
-                  <a href="/">Blog Post 2</a>
-                </li>
-              </ul>
-            </li>
-            <li className="card" role="tab" id="sch5">
-              <a className="collapsed" role="button" data-toggle="collapse" href="#sc5" aria-expanded="false" aria-controls="sc5">
-                <i className="zmdi zmdi-shopping-basket" /> E-Commerce </a>
-              <ul id="sc5" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch5" data-parent="#slidebar-menu">
-                <li>
-                  <a href="/">E-Commerce Sidebar</a>
-                </li>
-                <li>
-                  <a href="/">E-Commerce Sidebar Full</a>
-                </li>
-                <li>
-                  <a href="/">E-Commerce Topbar Full</a>
-                </li>
-                <li>
-                  <a href="/">E-Commerce Item</a>
-                </li>
-                <li>
-                  <a href="/">E-Commerce Cart</a>
-                </li>
-              </ul>
-            </li>
-            <li className="card" role="tab" id="sch6">
-              <a className="collapsed" role="button" data-toggle="collapse" href="#sc6" aria-expanded="false" aria-controls="sc6">
-                <i className="zmdi zmdi-collection-image-o" /> Portfolio </a>
-              <ul id="sc6" className="card-collapse collapse" role="tabpanel" aria-labelledby="sch6" data-parent="#slidebar-menu">
-                <li>
-                  <a href="/">Portfolio Sidebar Filters</a>
-                </li>
-                <li>
-                  <a href="/">Portfolio Topbar Filters</a>
-                </li>
-                <li>
-                  <a href="/">Portfolio Sidebar Fluid</a>
-                </li>
-                <li>
-                  <a href="/">Portfolio Topbar Fluid</a>
-                </li>
-                <li>
-                  <a href="/">Porfolio Cards</a>
-                </li>
-                <li>
-                  <a href="/">Porfolio Masonry</a>
-                </li>
-                <li>
-                  <a href="/">Portfolio Item 1</a>
-                </li>
-                <li>
-                  <a href="/">Portfolio Item 2</a>
-                </li>
-              </ul>
-            </li>
+            <li className="nav-small-cap m-t-10">--- Main Menu</li>
+            <li> <a href="index.html" className="waves-effect"><i className="linea-icon linea-basic fa-fw" data-icon="v" /> <span className="hide-menu"> Dashboard </span></a></li>
             <li>
-              <a className="link" href="component-typography.html">
-                <i className="zmdi zmdi-view-compact" /> UI Elements</a>
+              <a href="javascript:void(0);" className="waves-effect"><i class="fa fa-pencil fa-fw" /> <span className="hide-menu">Post<span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <Link href="inbox/">All Posts</Link></li>
+                <li> <Link href="new-post/">New category</Link></li>
+                <li> <Link href="category/">Category</Link></li>
+                <li> <Link href="new-category/">New Category</Link></li>
+              </ul>
             </li>
-            <li>
-              <a className="link" href="page-all.html">
-                <i className="zmdi zmdi-link" /> All Pages</a>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="linea-icon linea-basic fa-fw text-danger" data-icon="7" /> <span className="hide-menu text-danger"> Multipurpose <span className="fa arrow" /> <span className="label label-rouded label-danger pull-right">HOT</span></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="../eliteadmin-hospital/index.html">Hospital Admin</a> </li>
+                <li> <a href="../eliteadmin-university/index.html">University Admin</a> </li>
+                <li> <a href="../eliteadmin-music/index.html">Music Admin</a> </li>
+                <li> <a href="../eliteadmin-real-estate/index.html">Real Estate Admin</a> </li>
+                <li role="separator" className="divider" />
+                <li> <a href="../eliteadmin-inverse/index.html">Inverse</a></li>
+                <li> <a href="../eliteadmin-colors/index.html">Colors</a></li>
+                <li> <a href="../eliteadmin/index.html">Eliteadmin</a></li>
+                <li> <a href="../eliteadmin-wpmenu/index.html">Wpmenu</a></li>
+                <li> <a href="../eliteadmin-ecommerce/index.html">Ecommerce</a></li>
+                <li> <a href="../eliteadmin-modern/index.html">Modern</a></li>
+                <li> <a href="../eliteadmin-inverse-php/index.php">Basic PHP</a></li>
+                <li> <a href="../eliteadmin-material/index3.html">Material Design</a></li>
+                <li> <a href="../eliteadmin-dark/index.html">Dark</a></li>
+                <li> <a href="../eliteadmin-mini-sidebar/index3.html">Mini Sidebar</a></li>
+                <li> <a href="../eliteadmin-horizontal-navbar/index3.html">Horizontal Boxed Nav</a></li>
+                <li> <a href="../eliteadmin-horizontal-nav-fullwidth/index.html">Horizontal Full Nav</a></li>
+                <li> <a href="../eliteadmin-iconbar/index4.html">Iconbar</a></li>
+                <li> <a href="../eliteadmin-rtl/index.html">Eliteadmin RTL</a></li>
+                <li> <a href="../eliteadmin-inverse-rtl/index.html">Inverse RTL</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0);" className="waves-effect"><i data-icon=")" className="linea-icon linea-basic fa-fw" /> <span className="hide-menu">Mailbox<span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="inbox.html">Inbox</a></li>
+                <li> <a href="inbox-detail.html">Inbox detail</a></li>
+                <li> <a href="compose.html">Compose mail</a></li>
+              </ul>
+            </li>
+            <li className="nav-small-cap">--- Proffessional</li>
+            <li> <a href="events.html" className="waves-effect"><i className="ti-calendar p-r-10" /> <span className="hide-menu">Events</span></a> </li>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="icon-people p-r-10" /> <span className="hide-menu"> Professors <span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="professors.html">All Professors</a> </li>
+                <li> <a href="add-professor.html">Add Professor</a> </li>
+                <li> <a href="edit-professor.html">Edit Professor</a> </li>
+                <li> <a href="professor-profile.html">Professor Profile</a> </li>
+              </ul>
+            </li>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="fa fa-graduation-cap p-r-10" /> <span className="hide-menu"> Students <span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="students.html">All Students</a> </li>
+                <li> <a href="add-student.html">Add Student</a> </li>
+                <li> <a href="edit-student.html">Edit Student</a> </li>
+                <li> <a href="student-profile.html">Student Profile</a> </li>
+              </ul>
+            </li>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="fa fa-bars p-r-10" /> <span className="hide-menu"> Courses <span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="courses.html">All Courses</a> </li>
+                <li> <a href="add-course.html">Add Course</a> </li>
+                <li> <a href="edit-course.html">Edit Course</a> </li>
+                <li> <a href="course-info.html">Course Information</a> </li>
+              </ul>
+            </li>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="fa fa-book p-r-10" /> <span className="hide-menu"> Library <span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="library-assets.html">Library Assets</a></li>
+                <li> <a href="add-asset.html">Add Library Asset</a></li>
+                <li> <a href="edit-asset.html">Edit Library Asset</a></li>
+              </ul>
+            </li>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="fa fa-building p-r-10" /> <span className="hide-menu"> Department <span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="departments.html">Departments</a></li>
+                <li> <a href="add-department.html">Add Department</a></li>
+                <li> <a href="edit-department.html">Edit Department</a></li>
+              </ul>
+            </li>
+            <li> <a href="javascript:void(0);" className="waves-effect"><i className="icon-chart p-r-10" /> <span className="hide-menu"> Reports <span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="general-report.html">General Report</a></li>
+                <li> <a href="income-report.html">Income Report</a></li>
+                <li> <a href="expense-report.html">Expense Report</a></li>
+              </ul>
+            </li>
+            <li> <a href="widgets.html" className="waves-effect"><i data-icon="P" className="linea-icon linea-basic fa-fw" /> <span className="hide-menu">Widgets</span></a> </li>
+            <li> <a href="#" className="waves-effect"><i data-icon="7" className="linea-icon linea-basic fa-fw" /> <span className="hide-menu">Icons<span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="fontawesome.html">Font awesome</a> </li>
+                <li> <a href="themifyicon.html">Themify Icons</a> </li>
+                <li> <a href="simple-line.html">Simple line Icons</a> </li>
+                <li><a href="linea-icon.html">Linea Icons</a></li>
+                <li><a href="weather.html">Weather Icons</a></li>
+              </ul>
+            </li>
+            <li className="nav-small-cap">--- Extra Components</li>
+            <li> <a href="#" className="waves-effect"><i data-icon="/" className="linea-icon linea-basic fa-fw" /> <span className="hide-menu">UI Elements<span className="fa arrow" /> <span className="label label-rouded label-info pull-right">13</span> </span></a>
+              <ul className="nav nav-second-level">
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="panels-wells.html">Panels and Wells</a></li>
+                <li><a href="panel-ui-block.html">Panels With BlockUI</a></li>
+                <li><a href="panel-draggable.html">Draggable Panel</a></li>
+                <li><a href="portlet-draggable.html">Draggable Portlet</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="bootstrap-switch.html">Bootstrap Switch</a></li>
+                <li><a href="date-paginator.html">Date Paginator</a></li>
+                <li><a href="sweatalert.html">Sweat alert</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li><a href="tabs.html">Tabs</a></li>
+                <li><a href="tab-stylish.html">Stylish Tabs</a></li>
+                <li><a href="modals.html">Modals</a></li>
+                <li><a href="progressbars.html">Progress Bars</a></li>
+                <li><a href="notification.html">Notifications</a></li>
+                <li><a href="carousel.html">Carousel</a></li>
+                <li><a href="list-style.html">List & Media object</a></li>
+                <li><a href="user-cards.html">User Cards</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="timeline-horizontal.html">Horizontal Timeline</a></li>
+                <li><a href="nestable.html">Nesteble</a></li>
+                <li><a href="range-slider.html">Range Slider</a></li>
+                <li><a href="ribbons.html">Ribbons</a></li>
+                <li><a href="steps.html">Steps</a></li>
+                <li><a href="session-idle-timeout.html">Session Idle Timeout</a></li>
+                <li><a href="session-timeout.html">Session Timeout</a></li>
+                <li><a href="tooltip-stylish.html">Stylish Tooltip</a></li>
+                <li><a href="bootstrap.html">Bootstrap UI</a></li>
+              </ul>
+            </li>
+            <li> <a href="#" className="waves-effect active"><i data-icon="&#xe008;" className="linea-icon linea-basic fa-fw" /> <span className="hide-menu">Sample Pages<span className="fa arrow" /><span className="label label-rouded label-purple pull-right">30</span></span></a>
+              <ul className="nav nav-second-level">
+                <li><a href="starter-page.html">Starter Page</a></li>
+                <li><a href="blank.html">Blank Page</a></li>
+                <li><a href="javascript:void(0)" className="waves-effect">Email Templates
+                        <span className="fa arrow" /></a>
+                  <ul className="nav nav-third-level">
+                    <li><a href="../email-templates/basic.html">Basic</a></li>
+                    <li><a href="../email-templates/alert.html">Alert</a></li>
+                    <li><a href="../email-templates/billing.html">Billing</a></li>
+                    <li><a href="../email-templates/password-reset.html">Reset Pwd</a></li>
+                  </ul>
+                </li>
+                <li><a href="lightbox.html">Lightbox Popup</a></li>
+                <li><a href="treeview.html">Treeview</a></li>
+                <li><a href="search-result.html">Search Result</a></li>
+                <li><a href="utility-classes.html">Utility Classes</a></li>
+                <li><a href="custom-scroll.html">Custom Scrolls</a></li>
+                <li><a href="login.html">Login Page</a></li>
+                <li><a href="login2.html">Login v2</a></li>
+                <li><a href="animation.html">Animations</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="invoice.html">Invoice</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="register2.html">Register v2</a></li>
+                <li><a href="register3.html">3 Step Registration</a></li>
+                <li><a href="recoverpw.html">Recover Password</a></li>
+                <li><a href="lock-screen.html">Lock Screen</a></li>
+                <li><a href="400.html">Error 400</a></li>
+                <li><a href="403.html">Error 403</a></li>
+                <li><a href="404.html">Error 404</a></li>
+                <li><a href="500.html">Error 500</a></li>
+                <li><a href="503.html">Error 503</a></li>
+              </ul>
+            </li>
+            <li> <a href="forms.html" className="waves-effect"><i data-icon="&#xe00b;" className="linea-icon linea-basic fa-fw" /> <span className="hide-menu">Forms<span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li><a href="form-basic.html">Basic Forms</a></li>
+                <li><a href="form-layout.html">Form Layout</a></li>
+                <li><a href="form-advanced.html">Form Addons</a></li>
+                <li><a href="form-material-elements.html">Form Material</a></li>
+                <li><a href="form-float-input.html">Form Float Input</a></li>
+                <li><a href="form-upload.html">File Upload</a></li>
+                <li><a href="form-mask.html">Form Mask</a></li>
+                <li><a href="form-img-cropper.html">Image Cropping</a></li>
+                <li><a href="form-validation.html">Form Validation</a></li>
+                <li><a href="form-dropzone.html">File Dropzone</a></li>
+                <li><a href="form-pickers.html">Form-pickers</a></li>
+                <li><a href="icheck-control.html">Icheck Form Controls</a></li>
+                <li><a href="form-wizard.html">Form-wizards</a></li>
+                <li><a href="form-typehead.html">Typehead</a></li>
+                <li><a href="form-xeditable.html">X-editable</a></li>
+                <li><a href="form-summernote.html">Summernote</a></li>
+                <li><a href="form-bootstrap-wysihtml5.html">Bootstrap wysihtml5</a></li>
+                <li><a href="form-tinymce-wysihtml5.html">Tinymce wysihtml5</a></li>
+              </ul>
+            </li>
+            <li> <a href="tables.html" className="waves-effect"><i data-icon="O" className="linea-icon linea-software fa-fw" /> <span className="hide-menu">Tables<span className="fa arrow" /><span className="label label-rouded label-danger pull-right">7</span></span></a>
+              <ul className="nav nav-second-level">
+                <li><a href="basic-table.html">Basic Tables</a></li>
+                <li><a href="table-layouts.html">Table Layouts</a></li>
+                <li><a href="data-table.html">Data Table</a></li>
+                <li className="hidden"><a href="crud-table.html">Crud Table</a></li>
+                <li><a href="bootstrap-tables.html">Bootstrap Tables</a></li>
+                <li><a href="responsive-tables.html">Responsive Tables</a></li>
+                <li><a href="editable-tables.html">Editable Tables</a></li>
+                <li><a href="foo-tables.html">FooTables</a></li>
+                <li><a href="jsgrid.html">JsGrid Tables</a></li>
+              </ul>
+            </li>
+            <li className="nav-small-cap">--- Support</li>
+            <li> <a href="javascript:void(0)" className="waves-effect"><i data-icon="F" className="linea-icon linea-software fa-fw" /> <span className="hide-menu">Multi-Level Dropdown<span className="fa arrow" /></span></a>
+              <ul className="nav nav-second-level">
+                <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                <li> <a href="javascript:void(0)" className="waves-effect">Third Level <span className="fa arrow" /></a>
+                  <ul className="nav nav-third-level">
+                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><Link href="/logout" className="waves-effect"><i className="icon-logout fa-fw" /> <span className="hide-menu">Log out</span></Link></li>
+            <li className="hide-menu">
+              <a href="javacript:void(0);">
+                <span>Progress Report</span>
+                <div className="progress">
+                  <div className="progress-bar progress-bar-info" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style={{ width: "85%" }} role="progressbar"> <span className="sr-only">85% Complete (success)</span> </div>
+                </div>
+                <span>Student Report</span>
+                <div className="progress">
+                  <div className="progress-bar progress-bar-danger" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style={{ width: "85%" }} role="progressbar"> <span className="sr-only">85% Complete (success)</span> </div>
+                </div>
+              </a>
             </li>
           </ul>
-          <div className="ms-slidebar-social ms-slidebar-block">
-            <h4 className="ms-slidebar-block-title">Social Links</h4>
-            <div className="ms-slidebar-social">
-              <button className="btn-circle btn-circle-raised btn-facebook">
-                <i className="zmdi zmdi-facebook" />
-                <span className="badge-pill badge-pill-pink">12</span>
-                <div className="ripple-container" />
-              </button>
-              <button className="btn-circle btn-circle-raised btn-twitter">
-                <i className="zmdi zmdi-twitter" />
-                <span className="badge-pill badge-pill-pink">4</span>
-                <div className="ripple-container" />
-              </button>
-              <button className="btn-circle btn-circle-raised btn-google">
-                <i className="zmdi zmdi-google" />
-                <div className="ripple-container" />
-              </button>
-              <button className="btn-circle btn-circle-raised btn-instagram">
-                <i className="zmdi zmdi-instagram" />
-                <div className="ripple-container" />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     );

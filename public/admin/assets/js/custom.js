@@ -14,29 +14,29 @@ $(document).ready(function () {
 
     /* ===== Open-Close Right Sidebar ===== */
 
-    $(".right-side-toggle").on("click", function () {
-        $(".right-sidebar").slideDown(50).toggleClass("shw-rside");
-        $(".fxhdr").on("click", function () {
-            body.toggleClass("fix-header"); /* Fix Header JS */
-        });
-        $(".fxsdr").on("click", function () {
-            body.toggleClass("fix-sidebar"); /* Fix Sidebar JS */
-        });
+    // $(".right-side-toggle").on("click", function () {
+    //     $(".right-sidebar").slideDown(50).toggleClass("shw-rside");
+    //     $(".fxhdr").on("click", function () {
+    //         body.toggleClass("fix-header"); /* Fix Header JS */
+    //     });
+    //     $(".fxsdr").on("click", function () {
+    //         body.toggleClass("fix-sidebar"); /* Fix Sidebar JS */
+    //     });
 
-        /* ===== Service Panel JS ===== */
+    //     /* ===== Service Panel JS ===== */
 
-        var fxhdr = $('.fxhdr');
-        if (body.hasClass("fix-header")) {
-            fxhdr.attr('checked', true);
-        } else {
-            fxhdr.attr('checked', false);
-        }
-        if (body.hasClass("fix-sidebar")) {
-            fxhdr.attr('checked', true);
-        } else {
-            fxhdr.attr('checked', false);
-        }
-    });
+    //     var fxhdr = $('.fxhdr');
+    //     if (body.hasClass("fix-header")) {
+    //         fxhdr.attr('checked', true);
+    //     } else {
+    //         fxhdr.attr('checked', false);
+    //     }
+    //     if (body.hasClass("fix-sidebar")) {
+    //         fxhdr.attr('checked', true);
+    //     } else {
+    //         fxhdr.attr('checked', false);
+    //     }
+    // });
 
     /* ===========================================================
         Loads the correct sidebar on window load.
@@ -187,24 +187,24 @@ $(document).ready(function () {
 
     /* ===== Sidebar ===== */
 
-    $('.slimscrollright').slimScroll({
-        height: '100%',
-        position: 'right',
-        size: "5px",
-        color: '#dcdcdc'
-    });
-    $('.slimscrollsidebar').slimScroll({
-        height: '100%',
-        position: 'right',
-        size: "0px",
-        color: '#dcdcdc'
-    });
-    $('.chat-list').slimScroll({
-        height: '100%',
-        position: 'right',
-        size: "0px",
-        color: '#dcdcdc'
-    });
+    // $('.slimscrollright').slimScroll({
+    //     height: '100%',
+    //     position: 'right',
+    //     size: "5px",
+    //     color: '#dcdcdc'
+    // });
+    // $('.slimscrollsidebar').slimScroll({
+    //     height: '100%',
+    //     position: 'right',
+    //     size: "0px",
+    //     color: '#dcdcdc'
+    // });
+    // $('.chat-list').slimScroll({
+    //     height: '100%',
+    //     position: 'right',
+    //     size: "0px",
+    //     color: '#dcdcdc'
+    // });
 
     /* ===== Resize all elements ===== */
 
